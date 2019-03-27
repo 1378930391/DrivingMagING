@@ -13,6 +13,7 @@
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath:applicationContext.xml</param-value>
   </context-param>
+
   <!--解决延迟加载问题的过滤器-->
   <!--<filter>
     <filter-name>OpenSessionInViewFilter</filter-name>
