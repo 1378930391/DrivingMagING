@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="DrivingMagING:war">
-    <output-path>$PROJECT_DIR$/out/artifacts/DrivingMagING_war</output-path>
-    <root id="archive" name="DrivingMagING_war.war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="DrivingMag-ING.war">
       <element id="artifact" artifact-name="DrivingMagING:war exploded" />
     </root>
   </artifact>
