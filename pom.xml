@@ -22,6 +22,7 @@
   <!-- 锁定版本，struts2-2.3.24、spring4.2.4、hibernate5.0.7 -->
   <dependencyManagement>
     <dependencies>
+
       <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-context</artifactId>
@@ -140,6 +141,14 @@
       <artifactId>jstl</artifactId>
       <version>1.2</version>
     </dependency>
+
+    <dependency>
+      <groupId>org.apache.struts</groupId>
+      <artifactId>struts2-core</artifactId>
+      <version>2.5.16</version>
+    </dependency>
+
+
   </dependencies>
 
   <build>
