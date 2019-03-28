@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="domain.Staff" table="staff">
+        <id name="staff_id" column="staff_id">
+            <generator class="uuid"/>
+        </id>
+        <property name="staff_name"/>
+        <property name="staff_gender"/>
+        <property name="staff_tel"/>
+        <property name="staff_salary"/>
+
+        <!--配置员工和部门的单向一对一外键关联映射-->
+        <many-to-one name="department" column="department_id" class="domain.Department"/>
+    </class>
+</hibernate-mapping>

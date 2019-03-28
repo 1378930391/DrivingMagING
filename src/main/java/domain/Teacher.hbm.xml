@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="domain.Teacher" table="teacher">
+        <id name="teacher_id" column="teacher_id">
+            <generator class="uuid"/>
+        </id>
+        <property name="teacher_name"/>
+        <property name="teacher_tel"/>
+        <property name="teacher_gender"/>
+        <property name="teacher_salary"/>
+        <property name="teacher_carnumber"/>
+        <property name="teacher_carcode"/>
+
+        <!--配置教练员和部门的单向一对一外键关联映射-->
+        <many-to-one name="department" column="department_id" class="domain.Department"/>
+
+        <!--配置一对多关系,存的是多一方的对象-->
+        <!-- 多的一方属性集合名称 -->
+        <!-- cascade 级联 inverse: 放弃外键维护权
+        -->
+        <set name="students" cascade="save-update,delete" >
+            <!-- 多的一方的外键的名称 -->
+            <key column="stu_teacher_id"/>
+            <one-to-many class="domain.Student"/>
+        </set>
+    </class>
+</hibernate-mapping>

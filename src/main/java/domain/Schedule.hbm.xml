@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="domain.Schedule" table="schedule">
+        <id name="schedule_id" column="schedule_id">
+            <generator class="native"/>
+        </id>
+        <property name="schedule_starttime"/>
+        <property name="schedule_endtime"/>
+
+        <!--配置与教练的关联关系-->
+        <many-to-one name="teacher" column="schedule_teacher_id" class="domain.Teacher"/>
+        <!--配置与学生的关联关系-->
+        <many-to-one name="student" column="schedule_stu_id" class="domain.Student"/>
+    </class>
+</hibernate-mapping>
