@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="domain.Student" table="student">
+        <id name="stu_id" column="stu_id" >
+            <generator class="uuid"/>
+        </id>
+        <property name="stu_name"/>
+        <property name="stu_tel"/>
+        <property name="stu_cartype"/>
+        <property name="stu_cartype"/>
+        <property name="stu_createtime"/>
+        <!--配置教练-学生多对一关系,存的是学生一方的对象-->
+        <many-to-one name="teacher" class="domain.Teacher" column="teacher_id"/>
+
+        <!--配置学生成绩表 单向一对一外键关系-->
+        <many-to-one name="examination" class="domain.Examination" column="source_id"/>
+    </class>
+</hibernate-mapping>
