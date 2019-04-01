@@ -21,4 +21,44 @@ public class Schedule {
     private Student student;
     //private String schedule_teacher_id;
     //private String schedule_student_id;
+
+    public Integer getSchedule_id() {
+        return schedule_id;
+    }
+
+    public void setSchedule_id(Integer schedule_id) {
+        this.schedule_id = schedule_id;
+    }
+
+    public Date getSchedule_starttime() {
+        return schedule_starttime;
+    }
+
+    public void setSchedule_starttime(Date schedule_starttime) {
+        this.schedule_starttime = schedule_starttime;
+    }
+
+    public Date getSchedule_endtime() {
+        return schedule_endtime;
+    }
+
+    public void setSchedule_endtime(Date schedule_endtime) {
+        this.schedule_endtime = schedule_endtime;
+    }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
 }

@@ -12,5 +12,39 @@
 	http://www.springframework.org/schema/aop/spring-aop.xsd
 	http://www.springframework.org/schema/tx
 	http://www.springframework.org/schema/tx/spring-tx.xsd">
+    <!--spring整合hibernate-->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <!--注入连接池-->
+        <property name="dataSource" ref="dataSource"/>
+        <!--配置hibernate相关属性-->
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.format_sql">true</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+            </props>
+        </property>
+        <!--导入配置文件-->
+        <property name="mappingResources">
+            <list>
+                <value>domain/Department.hbm.xml</value>
+                <value>domain/Examination.xml</value>
+                <value>domain/Schedule.hbm.xml</value>
+                <value>domain/Staff.hbm.xml</value>
+                <value>domain/Student.hbm.xml</value>
+                <value>domain/Teacher.hbm.xml</value>
+            </list>
+        </property>
+    </bean>
+    <!--引入jdbc配置文件-->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+    <!--配置C3P0连接池-->
+    <bean name="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+        <property name="jdbcUrl" value="${jdbc.url}"/>
+        <property name="user" value="${jdbc.userName}"/>
+        <property name="password" value="${jdbc.passWord}"/>
+    </bean>
 
 </beans>
