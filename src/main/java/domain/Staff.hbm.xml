@@ -13,6 +13,6 @@
         <property name="staff_salary"/>
 
         <!--配置员工和部门的单向一对一外键关联映射-->
-        <many-to-one name="department" column="department_id" class="domain.Department"/>
+        <many-to-one name="department" column="staff_department_id" class="domain.Department"/>
     </class>
 </hibernate-mapping>
