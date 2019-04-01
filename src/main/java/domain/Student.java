@@ -21,9 +21,7 @@ public class Student {
     //private String stu_teacher_id;
     //一个学生只能属于一个老师
     private Teacher teacher;
-    //一个学生对应一张考试成绩单
-    private Examination examination;
-    //private String stu_source_id;
+
 
     public String getStu_id() {
         return stu_id;
@@ -73,11 +71,4 @@ public class Student {
         this.teacher = teacher;
     }
 
-    public Examination getExamination() {
-        return examination;
-    }
-
-    public void setExamination(Examination examination) {
-        this.examination = examination;
-    }
 }
