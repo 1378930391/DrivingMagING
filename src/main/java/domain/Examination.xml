@@ -15,5 +15,7 @@
         <properties name="subject3_source"/>
         <properties name="subject4_time"/>
         <properties name="subject4_source"/>
+        <!--配置学生成绩表 单向一对一外键关系-->
+        <many-to-one name="student" class="domain.Student" column="exam_stu_id"/>
     </class>
 </hibernate-mapping>

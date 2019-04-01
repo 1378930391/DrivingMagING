@@ -14,7 +14,5 @@
         <!--配置教练-学生多对一关系,存的是学生一方的对象-->
         <many-to-one name="teacher" class="domain.Teacher" column="stu_teacher_id"/>
 
-        <!--配置学生成绩表 单向一对一外键关系-->
-        <many-to-one name="examination" class="domain.Examination" column="source_id"/>
     </class>
 </hibernate-mapping>

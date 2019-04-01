@@ -23,6 +23,15 @@ public class Examination {
     private Integer subject3_source;
     private Date   subject4_time;
     private Integer subject4_source;
+    private Student student;
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
 
     public String getSource_id() {
         return source_id;
