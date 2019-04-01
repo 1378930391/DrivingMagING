@@ -1,15 +1,15 @@
 package action;
 
 import com.opensymphony.xwork2.ActionSupport;
-import test.DepService;
+
 
 public class HelloAction extends ActionSupport{
 
-    private DepService depService;
+    /*private DepService depService;
 
     public void setDepService(DepService depService) {
         this.depService = depService;
-    }
+    }*/
 
     public void hello(){
         //depService.findById(1);
