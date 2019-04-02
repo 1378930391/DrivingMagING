@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="DrivingMagING:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>DrivingMagING</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="DrivingMag-ING.war">
+      <element id="artifact" artifact-name="DrivingMagING:war exploded" />
+    </root>
+  </artifact>
+</component>
