@@ -6,6 +6,12 @@
     <constant name="struts.action.extension" value="action"/>
     <package name="driving" namespace="/" extends="struts-default">
         <action name="hello_*" class="action.HelloAction" method="{1}">
+
+        </action>
+        <action name="student_*" class="action.StudentAction" method="{1}">
+            <result name="findExan" type="redirect">exan_***</result>
+            <result name="study" type="redirect">${pageContext.redirect.contextPath}/jsp/student/study.jsp</result>
+            <result name="success" type="redirect">${pageContext.redirect.contextPath}</result>
         </action>
     </package>
 </struts>

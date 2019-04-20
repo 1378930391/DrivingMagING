@@ -56,6 +56,18 @@
     <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
+
+    <!-- 学生配置 -->
+    <bean id="studentAction" class="action.StudentAction">
+        <property name="studentService" ref="studentService"/>
+    </bean>
+    <bean id="studentService" class="service.StudentServiceImpl">
+        <property name="studentDao" ref="studentDao"/>
+    </bean>
+    <bean id="studentDao" class="dao.StudentDaoImpl">
+
+    </bean>
+
     <!--开启注解事务-->
     <tx:annotation-driven transaction-manager="transactionManager"/>
 </beans>
