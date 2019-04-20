@@ -37,6 +37,7 @@
                 <value>domain/Schedule.hbm.xml</value>
                 <value>domain/Teacher.hbm.xml</value>
                 <value>domain/Student.hbm.xml</value>
+                <value>domain/Admin.hbm.xml</value>
             </list>
         </property>
     </bean>
