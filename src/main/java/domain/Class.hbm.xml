@@ -2,10 +2,11 @@
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="domain.Schedule" table="schedule">
-        <id name="schedule_id" column="schedule_id">
+    <class name="domain.Class" table="class">
+        <id name="class_id" column="class_id">
             <generator class="native"/>
         </id>
-        <property name="schedule_info"/>
+        <property name="class_type"/>
+        <property name="class_cost"/>
     </class>
 </hibernate-mapping>

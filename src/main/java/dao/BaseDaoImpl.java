@@ -52,7 +52,6 @@ public class BaseDaoImpl<T> extends HibernateDaoSupport implements BaseDao<T> {
     @Override
     //查询所有的方法
     public List<T> findAll() {
-
         return (List<T>) this.getHibernateTemplate().find("from "+ clazz.getSimpleName());
     }
 
@@ -69,7 +68,6 @@ public class BaseDaoImpl<T> extends HibernateDaoSupport implements BaseDao<T> {
     //分页查询的方法
     public List<T> findByPage(DetachedCriteria detachedCriteria, Integer begin, Integer pageSize) {
         detachedCriteria.setProjection(null);
-
         return (List<T>) this.getHibernateTemplate().findByCriteria(detachedCriteria, begin, pageSize);
     }
 }

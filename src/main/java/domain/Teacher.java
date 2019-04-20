@@ -1,39 +1,20 @@
 package domain;
 
-import java.util.HashSet;
-import java.util.Set;
-
-/**
- * `teacher_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
- `teacher_name` varchar(255) NOT NULL,
- `teacher_tel` varchar(12) NOT NULL,
- `teacher_carnumber` varchar(12) NOT NULL,  教练车牌号
- `teacher_carcode` int(4) NOT NULL,         教练车号
- `teacher_gender` varchar(3) NOT NULL,
- `teacher_salary` double(10,2) NOT NULL,
- `teacher_department_id` int(2) NOT NULL,
- `teacher_student_id` varchar(255) DEFAULT NULL,
- */
 public class Teacher {
-    private String teacher_id;
+    private Integer teacher_id;
     private String teacher_name;
     private String teacher_tel;
-    private String teacher_carnumber;
-    private String teacher_carcode;
     private String teacher_gender;
-    private Double teacher_salary;
-    //配置教练和部门的映射
-    private Department department;
-    //private Integer teacher_department_id;
+    private Integer teacher_carId;
+    private String teacher_department;
+    private String teacher_level;
+    private String teacher_photo;
 
-    //配置教练有多个学生
-    private Set<Student> students = new HashSet<Student>();
-
-    public String getTeacher_id() {
+    public Integer getTeacher_id() {
         return teacher_id;
     }
 
-    public void setTeacher_id(String teacher_id) {
+    public void setTeacher_id(Integer teacher_id) {
         this.teacher_id = teacher_id;
     }
 
@@ -53,22 +34,6 @@ public class Teacher {
         this.teacher_tel = teacher_tel;
     }
 
-    public String getTeacher_carnumber() {
-        return teacher_carnumber;
-    }
-
-    public void setTeacher_carnumber(String teacher_carnumber) {
-        this.teacher_carnumber = teacher_carnumber;
-    }
-
-    public String getTeacher_carcode() {
-        return teacher_carcode;
-    }
-
-    public void setTeacher_carcode(String teacher_carcode) {
-        this.teacher_carcode = teacher_carcode;
-    }
-
     public String getTeacher_gender() {
         return teacher_gender;
     }
@@ -77,27 +42,35 @@ public class Teacher {
         this.teacher_gender = teacher_gender;
     }
 
-    public Double getTeacher_salary() {
-        return teacher_salary;
+    public Integer getTeacher_carId() {
+        return teacher_carId;
     }
 
-    public void setTeacher_salary(Double teacher_salary) {
-        this.teacher_salary = teacher_salary;
+    public void setTeacher_carId(Integer teacher_carId) {
+        this.teacher_carId = teacher_carId;
     }
 
-    public Department getDepartment() {
-        return department;
+    public String getTeacher_department() {
+        return teacher_department;
     }
 
-    public void setDepartment(Department department) {
-        this.department = department;
+    public void setTeacher_department(String teacher_department) {
+        this.teacher_department = teacher_department;
     }
 
-    public Set<Student> getStudents() {
-        return students;
+    public String getTeacher_level() {
+        return teacher_level;
     }
 
-    public void setStudents(Set<Student> students) {
-        this.students = students;
+    public void setTeacher_level(String teacher_level) {
+        this.teacher_level = teacher_level;
+    }
+
+    public String getTeacher_photo() {
+        return teacher_photo;
+    }
+
+    public void setTeacher_photo(String teacher_photo) {
+        this.teacher_photo = teacher_photo;
     }
 }
