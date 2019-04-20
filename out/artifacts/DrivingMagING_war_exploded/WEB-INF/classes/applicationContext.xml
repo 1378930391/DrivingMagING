@@ -37,6 +37,7 @@
                 <value>domain/Schedule.hbm.xml</value>
                 <value>domain/Teacher.hbm.xml</value>
                 <value>domain/Student.hbm.xml</value>
+                <value>domain/Admin.hbm.xml</value>
             </list>
         </property>
     </bean>
@@ -49,7 +50,6 @@
         <property name="user" value="${jdbc.userName}"/>
         <property name="password" value="${jdbc.passWord}"/>
     </bean>
-
 
     <!--配置事务管理器-->
     <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">

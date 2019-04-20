@@ -23,7 +23,7 @@
 
 </style>
 <body bgcolor="#7777CC">
-    <a href="http://www.baidu.com" target="main" class="btn btn-primary" >
+    <a href="/admin.action" target="main" class="btn btn-primary" >
         <h4>个人信息</h4>
     </a>
     <a href="http://www.baidu.com" target="main" class="btn btn-primary" >

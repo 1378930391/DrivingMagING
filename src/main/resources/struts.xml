@@ -7,5 +7,9 @@
     <package name="driving" namespace="/" extends="struts-default">
         <action name="hello_*" class="action.HelloAction" method="{1}">
         </action>
+
+        <action name="admin" class="action.AdminAction" method="toAdmin">
+            <result name="success">/jsp/test.jsp</result>
+        </action>
     </package>
 </struts>

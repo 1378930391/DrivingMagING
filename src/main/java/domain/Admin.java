@@ -1,5 +1,7 @@
 package domain;
 
+import java.io.Serializable;
+
 public class Admin {
     private Integer admin_id;
     private Integer admin_name;

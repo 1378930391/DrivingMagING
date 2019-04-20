@@ -30,7 +30,7 @@
                         <a href="#"><span class="glyphicon glyphicon-user">当前用户：</span></a>
                     </li>
                     <li>
-                        <a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span> 注销</a>
+                        <a href="#"><span class="glyphicon glyphicon-log-in"></span> 注销</a>
                     </li>
                 </ul>
             </div>

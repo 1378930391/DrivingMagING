@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Jarvis
@@ -22,5 +23,10 @@
         <frame name="main" src="jsp/main.jsp" frameborder="0" noresize="noresize"/>
     </frameset>
 </frameset>
+<body>
+
+</body>
+
+
 
 </html>
