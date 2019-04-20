@@ -13,5 +13,9 @@
             <result name="study" type="redirect">${pageContext.redirect.contextPath}/jsp/student/study.jsp</result>
             <result name="success" type="redirect">${pageContext.redirect.contextPath}</result>
         </action>
+
+        <action name="admin" class="action.AdminAction" method="toAdmin">
+            <result name="success">/jsp/test.jsp</result>
+        </action>
     </package>
 </struts>
