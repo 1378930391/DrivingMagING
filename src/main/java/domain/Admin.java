@@ -1,23 +1,23 @@
 package domain;
 
 public class Admin {
-    private int admin_id;
-    private int admin_name;
+    private Integer admin_id;
+    private Integer admin_name;
     private String admin_password;
 
-    public int getAdmin_id() {
+    public Integer getAdmin_id() {
         return admin_id;
     }
 
-    public void setAdmin_id(int admin_id) {
+    public void setAdmin_id(Integer admin_id) {
         this.admin_id = admin_id;
     }
 
-    public int getAdmin_name() {
+    public Integer getAdmin_name() {
         return admin_name;
     }
 
-    public void setAdmin_name(int admin_name) {
+    public void setAdmin_name(Integer admin_name) {
         this.admin_name = admin_name;
     }
 
