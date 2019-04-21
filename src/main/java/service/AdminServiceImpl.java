@@ -24,5 +24,6 @@ public class AdminServiceImpl implements AdminService {
         criteria.add(Restrictions.eq("admin_name", admin.getAdmin_name()));
         criteria.add(Restrictions.eq("admin_password", admin.getAdmin_password()));
         return dao.findCount(criteria) == 1;
+
     }
 }
