@@ -3,19 +3,43 @@ package service;
 import dao.StudentDao;
 import domain.Student;
 import org.hibernate.criterion.DetachedCriteria;
-import org.hibernate.criterion.Restrictions;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.hibernate.criterion.Restrictions;
 
-@Service
+import javax.annotation.Resource;
+import java.util.List;
+
+@Service("studentService")
+@Transactional
 public class StudentServiceImpl implements StudentService {
-    @Autowired
-    private StudentDao dao;
+    @Resource(name="studentDao")
+    private StudentDao studentDao;
 
+    @Override
+    public Student findStudent(String stu_id) {
+        return studentDao.findById(stu_id);
+    }
+
+    @Override
+    public void save(Student student) {
+        studentDao.save(student);
+    }
+
+    @Override
+    public void update(Student student) {
+        studentDao.update(student);
+    }
+
+    @Override
+    public List<Student> findAll() {
+        return studentDao.findAll();
+    }
+    @Override
     public boolean login(Student student) {
         DetachedCriteria criteria = DetachedCriteria.forClass(Student.class);
         criteria.add(Restrictions.eq("stu_identity", student.getStu_identity()));
         criteria.add(Restrictions.eq("stu_tel", student.getStu_tel()));
-        return dao.findCount(criteria) == 1;
+        return studentDao.findCount(criteria) == 1;
     }
 }
