@@ -2,17 +2,18 @@ package service;
 
 import dao.StudentDao;
 import domain.Student;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
+import java.util.List;
+
+@Service("studentService")
+@Transactional
 public class StudentServiceImpl implements StudentService {
+    @Resource(name="studentDao")
     private StudentDao studentDao;
-
-    public StudentDao getStudentDao() {
-        return studentDao;
-    }
-
-    public void setStudentDao(StudentDao studentDao) {
-        this.studentDao = studentDao;
-    }
 
     @Override
     public Student findStudent(String stu_id) {
@@ -27,5 +28,10 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public void update(Student student) {
         studentDao.update(student);
+    }
+
+    @Override
+    public List<Student> findAll() {
+        return studentDao.findAll();
     }
 }

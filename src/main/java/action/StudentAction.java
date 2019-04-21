@@ -3,8 +3,15 @@ package action;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import domain.Student;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
 import service.StudentService;
 
+import javax.annotation.Resource;
+import java.util.List;
+
+@Controller("studentAction")
+@Scope("prototype")
 public class StudentAction extends ActionSupport implements ModelDriven<Student> {
     private Student student = new Student();
     @Override
@@ -12,25 +19,18 @@ public class StudentAction extends ActionSupport implements ModelDriven<Student>
         return student;
     }
 
+    @Resource(name="studentService")
     private StudentService studentService;
-
-    public StudentService getStudentService() {
-        return studentService;
-    }
-
-    public void setStudentService(StudentService studentService) {
-        this.studentService = studentService;
-    }
 
     //插入学生
     public String insert(){
         studentService.save(student);
-        return "****";
+        return "student_info";
     }
     //更新学生状态
     public String update(){
         studentService.update(student);
-        return "****";
+        return "student_info";
     }
     //登陆
     public String login(){
@@ -49,5 +49,11 @@ public class StudentAction extends ActionSupport implements ModelDriven<Student>
     //27.	查询当月考试信息
     public String findExan(){
         return "findExan";
+    }
+    //查询所有
+    public String findAll(){
+        List<Student> studentList = studentService.findAll();
+
+        return "findAll";
     }
 }
