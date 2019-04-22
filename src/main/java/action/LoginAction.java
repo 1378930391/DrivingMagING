@@ -7,10 +7,13 @@ import domain.Admin;
 import domain.Student;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import service.AdminService;
 import service.StudentService;
+import service.StudentServiceImpl;
 import vo.LoginInfoVo;
 
+import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,9 +23,10 @@ import java.util.Map;
  * @since: 2019/4/21 16:53
  * @version: v1.0.0
  */
+@Controller
 public class LoginAction extends ActionSupport implements ModelDriven<LoginInfoVo> {
     @Autowired
-    private StudentService studentService;
+    private StudentService studentService ;
     @Autowired
     private AdminService adminService;
     private LoginInfoVo loginInfoVo = new LoginInfoVo();
@@ -37,13 +41,15 @@ public class LoginAction extends ActionSupport implements ModelDriven<LoginInfoV
     public String login() {
         Map<String, Object> map = new HashMap();  //存放当前登录用户数据  admin or student
         //1.学员登录
+        if(loginInfoVo==null||loginInfoVo.getStu_identity()==null)
+            return ERROR;
         if (loginInfoVo.getIsStudent().equals("1")) {
-            Student student = null;
+            Student student = new Student();
             BeanUtils.copyProperties(loginInfoVo, student);
             if (studentService.login(student)!=null) {
                 map.put("student", studentService.login(student));
                 context.getSession().put("token", map);
-                ActionContext.getContext().getValueStack().set("student",student);
+                ActionContext.getContext().getValueStack().set("name",student.getStu_name());
                 return "stu_success";
             } else
                 return ERROR;
@@ -55,7 +61,7 @@ public class LoginAction extends ActionSupport implements ModelDriven<LoginInfoV
             if (adminService.login(admin)!=null) {
                 map.put("admin", adminService.login(admin));
                 context.getSession().put("token", map);
-                ActionContext.getContext().getValueStack().set("admin",admin);
+                ActionContext.getContext().getValueStack().set("name",admin.getAdmin_name());
                 return "admin_success";
             } else
                 return ERROR;

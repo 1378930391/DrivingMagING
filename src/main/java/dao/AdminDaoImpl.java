@@ -21,4 +21,8 @@ public class AdminDaoImpl<T> extends BaseDaoImpl<Admin> implements AdminDao {
 
         return (Admin)this.getHibernateTemplate().find("from domain.Admin admin where admin_name = ?",name);
     }
+    @Resource
+    public void setSessionFactiory0(SessionFactory sessionFactory){
+        super.setSessionFactory(sessionFactory);
+    }
 }

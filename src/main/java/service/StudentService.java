@@ -1,9 +1,9 @@
 package service;
 
 import domain.Student;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
-
 
 public interface StudentService {
     Student login(Student student);

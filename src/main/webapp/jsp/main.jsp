@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <%--
   Created by IntelliJ IDEA.
   User: Jarvis
@@ -64,6 +66,7 @@
     </tr>
     </tbody>
 </table>
+<s:debug></s:debug>
 </body>
 
 </html>

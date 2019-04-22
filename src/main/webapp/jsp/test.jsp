@@ -1,5 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: apple
@@ -14,7 +13,13 @@
 </head>
 <body>
 
+    <table>
 
+        <th>这是个TEST</th>
+        <th>ID：${admin}</th>
+
+    </table>
+<s:debug></s:debug>
 <form action="student_login.action">  <div class="form-group">
         <div class="input-group">
             <div class="input-group-addon">身份证号:</div>

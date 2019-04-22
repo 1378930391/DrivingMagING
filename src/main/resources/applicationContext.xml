@@ -15,9 +15,10 @@
 
     <!--开启属性注解==============Resource, Value, Autowired, Qulifier-->
     <context:annotation-config/>
-    <context:component-scan base-package="action"/>
-    <context:component-scan base-package="service"/>
-    <context:component-scan base-package="dao"/>
+    <context:component-scan base-package="action"></context:component-scan>
+    <context:component-scan base-package="dao"></context:component-scan>
+    <context:component-scan base-package="service"></context:component-scan>
+    <context:component-scan base-package="aspect"></context:component-scan>
 
     <!--spring整合hibernate-->
     <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
@@ -58,6 +59,7 @@
     <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
+
     <!--开启注解事务-->
     <tx:annotation-driven transaction-manager="transactionManager"/>
 </beans>

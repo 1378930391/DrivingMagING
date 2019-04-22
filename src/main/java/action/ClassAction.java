@@ -1,6 +1,7 @@
 package action;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
 import domain.Class;
 import service.ClassService;
 
@@ -12,7 +13,12 @@ import javax.annotation.Resource;
  * @since: 2019/4/22 8:43
  * @version: v1.0.0
  */
-public class ClassAction extends ActionSupport {
+public class ClassAction extends ActionSupport implements ModelDriven<Class> {
+    private Class clazz;
+    @Override
+    public Class getModel() {
+        return this.clazz;
+    }
     @Resource(name = "classSesrvice")
     private ClassService classService;
 
@@ -23,7 +29,7 @@ public class ClassAction extends ActionSupport {
      */
     public String findAllClass() {
         classService.findAllClass();
-        return SUCCESS;
+        return "findAllClass";
     }
 
     /**
@@ -31,8 +37,8 @@ public class ClassAction extends ActionSupport {
      *
      * @return
      */
-    public String findClassById(Integer class_id) {
-        return classService.findOne(class_id) == null ? ERROR : SUCCESS;
+    public String findClassById() {
+        return classService.findOne(clazz.getClass_id()) == null ? ERROR : "findClassById";
     }
 
     /**
@@ -40,8 +46,10 @@ public class ClassAction extends ActionSupport {
      *
      * @return
      */
-    public String updateClass(Class clazz) {
+    public String updateClass() {
         classService.updateClass(clazz);
-        return SUCCESS;
+        return "updateClass";
     }
+
+
 }

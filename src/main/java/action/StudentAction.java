@@ -65,11 +65,15 @@ public class StudentAction extends ActionSupport implements ModelDriven<Student>
         return "findAll";
     }
 
+    /**
+     * 26.查看自己的基本信息
+     * @return
+     */
     public String findOne() {
         HttpServletRequest request = (HttpServletRequest) RequestContextHolder.getRequestAttributes();
         Student student = (Student) ((Map<String, Object>) request.getSession().getAttribute("token")).get("student");
         ActionContext.getContext().getValueStack().set("student", student);
-        return SUCCESS;
+        return "findOne";
     }
 
 

@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <%--
   Created by IntelliJ IDEA.
   User: Jarvis
@@ -27,13 +29,16 @@
                 </div>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#"><span class="glyphicon glyphicon-user">当前用户：</span></a>
+                        <a href="#"><span class="glyphicon glyphicon-user">当前用户：<s:property value="name"></s:property></span></a>
                     </li>
                     <li>
-                        <a href="#"><span class="glyphicon glyphicon-log-in"></span> 注销</a>
+                        <s:debug>debug</s:debug>
+                        <a href="logout.action" ><span class="glyphicon glyphicon-log-in"></span> 注销</a>
                     </li>
                 </ul>
             </div>
+
+
         </div>
     </nav>
 </body>

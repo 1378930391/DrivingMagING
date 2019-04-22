@@ -8,6 +8,7 @@ import domain.Class;
 import domain.Student;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,6 +35,8 @@ public class AdminServiceImpl implements AdminService {
     private ClassDao classDao;
     @Autowired
     private StudentDao studentDao;
+    @Autowired
+    private SessionFactory sessionFactory;
 
     @Override
     public Admin login(Admin admin) {

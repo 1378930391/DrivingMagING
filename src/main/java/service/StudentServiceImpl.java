@@ -1,8 +1,11 @@
 package service;
 
+import dao.ClassDao;
 import dao.StudentDao;
+import dao.StudentDaoImpl;
 import domain.Student;
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.DetachedCriteria;
@@ -16,12 +19,15 @@ import javax.annotation.Resource;
 import javax.security.auth.login.Configuration;
 import java.util.List;
 
-@Service
+@Service("studentService")
 @Transactional
 public class StudentServiceImpl implements StudentService {
-
     @Autowired
     private StudentDao studentDao;
+    @Autowired
+    private SessionFactory sessionFactory;
+    @Autowired
+    private ClassDao classDao;
 
     @Override
     public Student findStudent(String stu_id) {
@@ -44,7 +50,7 @@ public class StudentServiceImpl implements StudentService {
     }
     @Override
     public Student login(Student student) {
-        Session session=new org.hibernate.cfg.Configuration().configure().buildSessionFactory().openSession();
+        Session session=sessionFactory.openSession();
         Criteria criteria=session.createCriteria(Student.class);
         criteria.add(Restrictions.eq("stu_identity",student.getStu_identity()));
         criteria.add(Restrictions.eq("stu_tel",student.getStu_tel()));

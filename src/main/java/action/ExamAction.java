@@ -100,7 +100,7 @@ public class ExamAction extends ActionSupport implements ModelDriven<Exam> {
      */
     public String getAllExams() {
         ActionContext.getContext().getValueStack().set("allExams", examService.getAllExams());
-        return SUCCESS;
+        return "getAllExams";
     }
 
     /**
@@ -121,7 +121,7 @@ public class ExamAction extends ActionSupport implements ModelDriven<Exam> {
         examService.update(exam);
         student.setStu_exam_id(exam);
         studentService.update(student);
-        return SUCCESS;
+        return "updateExam";
     }
 
 }

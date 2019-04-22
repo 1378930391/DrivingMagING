@@ -7,15 +7,17 @@ import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
 
-@Repository
+@Repository("studentDao")
 public class StudentDaoImpl extends BaseDaoImpl<Student> implements StudentDao {
-
-    @Resource
-    public void setSessionFactory0(SessionFactory sessionFactory){
-        super.setSessionFactory(sessionFactory);
-    }
-    @Autowired
+    /*@Resource(name = "sessionFactory")
+    private SessionFactory sessionFactory;*/
     public StudentDaoImpl() {
         super(Student.class);
     }
+
+    @Resource
+    public void setSessionFactiory0(SessionFactory sessionFactory){
+        super.setSessionFactory(sessionFactory);
+    }
+
 }

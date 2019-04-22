@@ -42,6 +42,20 @@
             <artifactId>spring-web</artifactId>
             <version>5.1.5.RELEASE</version>
         </dependency>
+
+        <!-- spring aop支持 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>5.1.5.RELEASE</version>
+        </dependency>
+
+        <!-- aspectj支持 -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>1.8.9</version>
+        </dependency>
         <!-- hibernate -->
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -114,6 +128,8 @@
             <version>1.7.4</version>
         </dependency>
     </dependencies>
+
+
 
     <build>
         <finalName>DrivingMag-ING</finalName>

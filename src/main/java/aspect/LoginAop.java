@@ -26,12 +26,13 @@ public class LoginAop {
 
     @Around("pointcut()")
     public String around(ProceedingJoinPoint point) throws Throwable {
+        System.out.println(">>>>>>>>>>>>进入切面<<<<<<<<<<<<<<");
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
         //拦截方法
         Object result = point.proceed();
         if (attributes.getRequest().getSession().getAttribute("token") == null)
-            result = "failed";
+            result = "error";
         return (String) result;
     }
 }

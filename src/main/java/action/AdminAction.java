@@ -27,7 +27,7 @@ public class AdminAction extends ActionSupport {
      */
     public String getIncome() {
         ActionContext.getContext().getValueStack().set("incomeList", adminService.getIncome());
-        return SUCCESS;
+        return "getIncome";
     }
 
     /**
@@ -37,7 +37,7 @@ public class AdminAction extends ActionSupport {
      */
     public String getAllStudentByClass() {
         ActionContext.getContext().getValueStack().set("allStudentByClass", adminService.getAllStudentByClass());
-        return SUCCESS;
+        return "allStudentByClass";
     }
 
     /**
@@ -46,8 +46,8 @@ public class AdminAction extends ActionSupport {
      * @return
      */
     public String getAllStudentByTeacher() {
-        ActionContext.getContext().getValueStack().set("allStudentByClass", adminService.getAllStudentByTeacher());
-        return SUCCESS;
+        ActionContext.getContext().getValueStack().set("allStudentByTeacher", adminService.getAllStudentByTeacher());
+        return "allStudentByTeacher";
     }
 
 }
