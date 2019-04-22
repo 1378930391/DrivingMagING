@@ -74,10 +74,10 @@ public class ExamAction extends ActionSupport implements ModelDriven<Exam> {
         return "updateExamJump";
     }
 
-    public String updateExam(){
+    public String updateExam1(){
 
-        examService.updateExam(exam);
-        return "updateExam";
+        examService.updateExam1(exam);
+        return "updateExam1";
     }
 
     public String findBySubject(){

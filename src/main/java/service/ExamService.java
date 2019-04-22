@@ -12,7 +12,7 @@ public interface ExamService {
     public List<Exam> queryAllExam();
     public boolean insertExam(Exam exam);
     public boolean deleteExam(Exam exam);
-    public boolean updateExam(Exam exam);
+    public boolean updateExam1(Exam exam);
     public Exam findById(int exam_id);
     public List<Exam> findBySubject(String exam_subject);
     public List<Student> queryAllStudent(Exam exam);

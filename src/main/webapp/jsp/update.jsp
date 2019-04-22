@@ -19,7 +19,7 @@
 <%--</s:form>--%>
 
 
-<form action="exam_updateExam.action" method="post">
+<form action="exam_updateExam1.action" method="post">
 
 
             <input type="hidden" name="exam_id" value="${exam.exam_id}">

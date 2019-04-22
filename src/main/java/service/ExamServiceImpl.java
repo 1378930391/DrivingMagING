@@ -44,7 +44,7 @@ public class ExamServiceImpl implements ExamService {
         examDao.delete(exam);
         return true;
     }
-    public boolean updateExam(Exam exam){
+    public boolean updateExam1(Exam exam){
 
         examDao.update(exam);
         return true;
