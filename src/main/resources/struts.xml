@@ -25,7 +25,7 @@
             <result name="teacher_info">**************</result>
         </action>
 
-        <action name="login_logout" class="action.LoginAction" method="{1}">
+        <action name="*" class="action.LoginAction" method="{1}">
             <result name="stu_success">/jsp/xxx.jsp</result>      <!--学员登录成功-->
             <result name="admin_success">/jsp/xxx.jsp</result>    <!--管理员登录成功-->
             <result name="error">/jsp/xxx.jsp</result>            <!--用户名或密码错误-->

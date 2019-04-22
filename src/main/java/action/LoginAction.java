@@ -40,9 +40,10 @@ public class LoginAction extends ActionSupport implements ModelDriven<LoginInfoV
         if (loginInfoVo.getIsStudent().equals("1")) {
             Student student = null;
             BeanUtils.copyProperties(loginInfoVo, student);
-            if (studentService.login(student)) {
-                map.put("student", student);
+            if (studentService.login(student)!=null) {
+                map.put("student", studentService.login(student));
                 context.getSession().put("token", map);
+                ActionContext.getContext().getValueStack().set("student",student);
                 return "stu_success";
             } else
                 return ERROR;
@@ -51,9 +52,10 @@ public class LoginAction extends ActionSupport implements ModelDriven<LoginInfoV
             Admin admin = new Admin();
             admin.setAdmin_name(Integer.parseInt(loginInfoVo.getStu_identity()));
             admin.setAdmin_password(loginInfoVo.getStu_tel());
-            if (adminService.login(admin)) {
-                map.put("admin", admin);
+            if (adminService.login(admin)!=null) {
+                map.put("admin", adminService.login(admin));
                 context.getSession().put("token", map);
+                ActionContext.getContext().getValueStack().set("admin",admin);
                 return "admin_success";
             } else
                 return ERROR;
