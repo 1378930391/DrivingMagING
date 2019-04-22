@@ -1,7 +1,11 @@
 package dao;
 
 import domain.Class;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import javax.annotation.Resource;
 
 /**
  * @Description:
@@ -12,6 +16,12 @@ import org.springframework.stereotype.Repository;
 @Repository("classDao")
 public class ClassDaoImpl extends BaseDaoImpl<Class> implements ClassDao {
 
+
+    @Resource
+    public void setSessionFactory0(SessionFactory sessionFactory){
+        super.setSessionFactory(sessionFactory);
+    }
+    @Autowired
     public ClassDaoImpl() {
         super(Class.class);
     }
