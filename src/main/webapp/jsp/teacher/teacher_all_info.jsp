@@ -33,6 +33,20 @@
 <h1>教练信息</h1>
 <table border="1" cellpadding="0" cellspacing="0" class="table table-bordered">
     <tr>
+        <td height="30" width="100">按科目查询</td>
+        <td height="30" width="100"><button><a href="teacher_findByLevel.action?teacher_level=科一">科一</a></button></td>
+        <td height="30" width="100"><button><a href="teacher_findByLevel.action?teacher_level=科二">科二</a></button></td>
+        <td height="30" width="100"><button><a href="teacher_findByLevel.action?teacher_level=科三">科三</a></button></td>
+        <td height="30" width="100"><button><a href="teacher_findByLevel.action?teacher_level=科四">科四</a></button></td>
+    </tr>
+    <tr>
+        <td height="30" width="100">按部门查询</td>
+        <td height="30" width="100"><button><a href="teacher_findByDepartment.action?teacher_department=A1">A1</a></button></td>
+        <td height="30" width="100"><button><a href="teacher_findByDepartment.action?teacher_department=A2">A2</a></button></td>
+        <td height="30" width="100"><button><a href="teacher_findByDepartment.action?teacher_department=C1">C1</a></button></td>
+        <td height="30" width="100"><button><a href="teacher_findByDepartment.action?teacher_department=C2">C2</a></button></td>
+    </tr>
+    <tr>
         <td height="30" width="100">姓名</td>
         <td height="30" width="100">性别</td>
         <td height="30" width="100">手机号码</td>
