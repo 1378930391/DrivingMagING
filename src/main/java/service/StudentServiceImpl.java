@@ -2,14 +2,17 @@ package service;
 
 import dao.StudentDao;
 import domain.Student;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.criterion.DetachedCriteria;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.util.CollectionUtils;
 
 import javax.annotation.Resource;
+import javax.security.auth.login.Configuration;
 import java.util.List;
 
 @Service
@@ -39,10 +42,12 @@ public class StudentServiceImpl implements StudentService {
         return studentDao.findAll();
     }
     @Override
-    public boolean login(Student student) {
-        DetachedCriteria criteria = DetachedCriteria.forClass(Student.class);
-        criteria.add(Restrictions.eq("stu_identity", student.getStu_identity()));
-        criteria.add(Restrictions.eq("stu_tel", student.getStu_tel()));
-        return studentDao.findCount(criteria) == 1;
+    public Student login(Student student) {
+        Session session=new org.hibernate.cfg.Configuration().configure().buildSessionFactory().openSession();
+        Criteria criteria=session.createCriteria(Student.class);
+        criteria.add(Restrictions.eq("stu_identity",student.getStu_identity()));
+        criteria.add(Restrictions.eq("stu_tel",student.getStu_tel()));
+        List<Student> list = criteria.list();
+        return CollectionUtils.isEmpty(list)?null:list.get(0);
     }
 }
