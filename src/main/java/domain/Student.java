@@ -44,7 +44,6 @@ public class Student {
      * 多个学生对应一个进度
      * private String stu_schedule_info;//进度信息
      */
-
     private Class stu_class_type;
     private Teacher stu_teacher_name;
     private Schedule stu_schedule_info;

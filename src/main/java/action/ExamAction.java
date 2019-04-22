@@ -6,16 +6,23 @@ import com.opensymphony.xwork2.ModelDriven;
 import domain.Exam;
 import domain.Student;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import service.ExamService;
 import service.StudentService;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 import java.util.Map;
 
+
+@Controller
 public class ExamAction extends ActionSupport implements ModelDriven<Exam> {
+
+
     private Exam exam = new Exam();
+
     @Autowired
     private ExamService examService;
     @Autowired
@@ -27,9 +34,64 @@ public class ExamAction extends ActionSupport implements ModelDriven<Exam> {
     }
 
 
-    public String update() {
 
-        return SUCCESS;
+    public String queryAllStudent(){
+
+
+        List<Student> students = examService.queryAllStudent(exam);
+//        System.out.println(students.size());
+        ActionContext.getContext().getValueStack().set("students",students);
+
+        return "queryAllStudent";
+    }
+
+
+    public String queryAllExams1(){
+
+        List<Exam>  exams  = examService.queryAllExam();
+        ActionContext.getContext().getValueStack().set("exams",exams);
+        return "queryAllExams";
+    }
+
+    public String deleteExam(){
+
+        Exam exam1 = examService.findById(exam.getExam_id());
+        examService.deleteExam(exam1);
+
+        return "deleteExam";
+    }
+
+//    public String findById(){
+//        examService.findById(exam.getExam_id());
+//        return "findById";
+//    }
+    public String updateExamJump(){
+
+        Exam exam1 = examService.findById(exam.getExam_id());
+        ActionContext.getContext().getValueStack().set("exam",exam1);
+        System.out.println(exam1.getExam_date());
+        return "updateExamJump";
+    }
+
+    public String updateExam1(){
+
+        examService.updateExam1(exam);
+        return "updateExam1";
+    }
+
+    public String findBySubject(){
+
+
+        List<Exam> exams = examService.findBySubject(exam.getExam_subject());
+        ActionContext.getContext().getValueStack().set("exams",exams);
+
+        return "queryAllExams";
+    }
+
+    public String insertExam(){
+
+        examService.insertExam(exam);
+        return "insertExam";
     }
 
     /**
