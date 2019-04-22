@@ -6,12 +6,14 @@ import com.opensymphony.xwork2.ModelDriven;
 import domain.Exam;
 import domain.Student;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import service.ExamService;
 import service.StudentService;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 import java.util.Map;
 
 
@@ -20,6 +22,7 @@ public class ExamAction extends ActionSupport implements ModelDriven<Exam> {
 
 
     private Exam exam = new Exam();
+
     @Autowired
     private ExamService examService;
     @Autowired
@@ -30,8 +33,6 @@ public class ExamAction extends ActionSupport implements ModelDriven<Exam> {
         return exam;
     }
 
-    @Autowired
-    private ExamService examService;
 
 
     public String queryAllStudent(){
