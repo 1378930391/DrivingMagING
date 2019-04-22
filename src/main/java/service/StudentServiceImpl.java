@@ -2,6 +2,7 @@ package service;
 
 import dao.StudentDao;
 import domain.Student;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -9,10 +10,11 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
 import java.util.List;
 
-@Service("studentService")
+@Service
 @Transactional
 public class StudentServiceImpl implements StudentService {
-    @Resource(name="studentDao")
+
+    @Autowired
     private StudentDao studentDao;
 
     @Override

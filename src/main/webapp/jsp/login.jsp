@@ -34,7 +34,7 @@ my<link rel="stylesheet" type="text/css" href="styles.css">
 <body>
 <div class="container">
     <div class="row"  id="login-box" style="width:480px;margin:10% auto 0 auto;background: #000;opacity: 0.8;padding:10px 60px;border-radius: 6px;color:#fff;">
-        <form action="" id="">
+        <form action="student_login.action" id="info">
             <script>
                 function sud() {
                     var IDcard = document.getElementById("stu_identity").value;

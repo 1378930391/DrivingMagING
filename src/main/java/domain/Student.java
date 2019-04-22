@@ -17,6 +17,25 @@ public class Student {
     private Integer stu_effective;//是否有效 0 1
 
     private Exam stu_exam_id;   //预约考试
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "stu_id='" + stu_id + '\'' +
+                ", stu_name='" + stu_name + '\'' +
+                ", stu_gender='" + stu_gender + '\'' +
+                ", stu_birthday=" + stu_birthday +
+                ", stu_age=" + stu_age +
+                ", stu_tel='" + stu_tel + '\'' +
+                ", stu_identity='" + stu_identity + '\'' +
+                ", stu_nativeplace='" + stu_nativeplace + '\'' +
+                ", stu_level='" + stu_level + '\'' +
+                ", stu_createtime=" + stu_createtime +
+                ", stu_photo='" + stu_photo + '\'' +
+                ", stu_effective=" + stu_effective +
+                '}';
+    }
+
     /**
      * 通过orm方式表示,多个学生对应一个班级
      * private Integer stu_class_type;//班级类型
@@ -25,6 +44,7 @@ public class Student {
      * 多个学生对应一个进度
      * private String stu_schedule_info;//进度信息
      */
+
     private Class stu_class_type;
     private Teacher stu_teacher_name;
     private Schedule stu_schedule_info;

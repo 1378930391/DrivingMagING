@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="/struts-tags" prefix="s" %>
 <html>
 
 <head>
@@ -26,12 +27,22 @@
                     <h3 style="color: white; margin-top: 10px;">驾校学员管理系统</h3>
                 </div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="#"><span class="glyphicon glyphicon-user">当前用户：</span></a>
-                    </li>
-                    <li>
-                        <a href="#"><span class="glyphicon glyphicon-log-in"></span> 注销</a>
-                    </li>
+                    <s:if test="#session.student!=null">
+                        <li>
+                            <a href="/jsp/login.jsp"><span class="glyphicon glyphicon-user">登录</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="glyphicon glyphicon-log-in"></span> 注册</a>
+                        </li>
+                    </s:if>
+                    <s:else>
+                        <li>
+                            <a href="student_findStudent.action"><span class="glyphicon glyphicon-user">当前用户：</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="glyphicon glyphicon-log-in"></span> 注销</a>
+                        </li>
+                    </s:else>
                 </ul>
             </div>
         </div>

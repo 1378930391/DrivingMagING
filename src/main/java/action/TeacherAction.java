@@ -3,22 +3,23 @@ package action;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import domain.Teacher;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import service.TeacherService;
 
 import javax.annotation.Resource;
 
-@Controller("teacherAction")
+@Controller
 @Scope("prototype")
 public class TeacherAction extends ActionSupport implements ModelDriven<Teacher> {
-    private Teacher teacher;
+    private Teacher teacher = new Teacher();
     @Override
     public Teacher getModel() {
         return teacher;
     }
 
-    @Resource(name="teacherService")
+    @Autowired
     private TeacherService teacherService;
 
     //插入教练
