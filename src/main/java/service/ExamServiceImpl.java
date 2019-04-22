@@ -52,7 +52,6 @@ public class ExamServiceImpl implements ExamService {
 
     public Exam findById(int exam_id){
 
-
         return examDao.findById(exam_id);
     }
 }
