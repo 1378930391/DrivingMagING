@@ -20,9 +20,9 @@ public class ExamServiceImpl implements ExamService {
     @Autowired
     private ExamDao examDao;
 
-    public List<Student> queryAllStudent(int exam_id) {
-        System.out.println(exam_id+"SERVICE");
-        return examDao.queryAllStudent(exam_id);
+    public List<Student> queryAllStudent(Exam exam) {
+
+        return examDao.queryAllStudent(exam);
     }
 
 

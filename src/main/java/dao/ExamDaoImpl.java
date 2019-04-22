@@ -28,8 +28,8 @@ public class ExamDaoImpl extends BaseDaoImpl<Exam> implements ExamDao {
     }
 
     @Override
-    public List<Student> queryAllStudent(int exam_id){
-        System.out.println(exam_id+"DAO");
-        return (List<Student>)this.getHibernateTemplate().find("from Student where stu_exam_id = ?",3);
+    public List<Student> queryAllStudent(Exam exam){
+
+        return (List<Student>)this.getHibernateTemplate().find("from Student where stu_exam_id = ?",exam);
     }
 }

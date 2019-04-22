@@ -10,6 +10,6 @@ import java.util.List;
 public interface ExamDao extends BaseDao<Exam> {
 
     public List<Exam> findBySubject(String exam_subject);
-    public List<Student> queryAllStudent(int exam_id);
+    public List<Student> queryAllStudent(Exam exam_id);
 
 }

@@ -15,5 +15,5 @@ public interface ExamService {
     public boolean updateExam(Exam exam);
     public Exam findById(int exam_id);
     public List<Exam> findBySubject(String exam_subject);
-    public List<Student> queryAllStudent(int exam_id);
+    public List<Student> queryAllStudent(Exam exam);
 }
