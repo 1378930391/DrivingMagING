@@ -1,10 +1,6 @@
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%--
-    录入教练信息
-
---%>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -32,33 +28,45 @@
     </style>
 </head>
 <body>
-<h1>录入教练信息</h1>
-<form action="teacher_insert.action">
+<h1>录入学生信息</h1>
+<form action="studnet_insert.action">
     <input type="hidden" value="123" name="teacher_photo">
 <table border="1" cellpadding="0" cellspacing="0" class="table table-bordered">
     <tr>
         <td height="30" width="100">姓名</td>
-        <td height="30" width="600" colspan="5"><input height="30" width="600" name="teacher_name" type="text" placeholder="请输入教练姓名"></td>
+        <td height="30" width="600" colspan="5"><input height="30" width="600" name="stu_name" type="text" placeholder="请输入姓名"></td>
     </tr>
     <tr>
         <td height="30" width="100">性别</td>
-        <td height="30" width="600" colspan="5"><input height="30" width="600" name="teacher_gender" type="text" placeholder="请输入教练性别"></td>
+        <td height="30" width="600" colspan="5"><input height="30" width="600" name="stu_gender" type="text" placeholder="请输入性别"></td>
     </tr>
     <tr>
         <td height="30" width="100">手机号码</td>
-        <td height="30" width="600" colspan="5"><input height="30" width="600" name="teacher_tel" type="text" placeholder="请输入教练电话"></td>
+        <td height="30" width="600" colspan="5"><input height="30" width="600" name="stu_tel" type="text" placeholder="请输入电话"></td>
     </tr>
     <tr>
-        <td height="30" width="100">部门</td>
-        <td height="30" width="600" colspan="5"><input height="30" width="600" name="teacher_department" type="text" placeholder="请输入部门"></td>
+        <td height="30" width="100">生日</td>
+        <td height="30" width="600" colspan="5"><input height="30" width="600" name="stu_birthday" type="text" placeholder="请输入生日"></td>
     </tr>
     <tr>
-        <td height="30" width="100">车号</td>
-        <td height="30" width="600" colspan="5"><input height="30" width="600" name="teacher_carId" type="text" placeholder="请输入车号"></td>
+        <td height="30" width="100">年龄</td>
+        <td height="30" width="600" colspan="5"><input height="30" width="600" name="stu_age" type="text" placeholder="请输入年龄"></td>
     </tr>
     <tr>
-        <td height="30" width="100">科目</td>
-        <td height="30" width="600" colspan="5"><input height="30" width="600" name="teacher_level" type="text" placeholder="请输入科目"></td>
+        <td height="30" width="100">身份证</td>
+        <td height="30" width="600" colspan="5"><input height="30" width="600" name="stu_identity" type="text" placeholder="请输入身份证"></td>
+    </tr>
+    <tr>
+        <td height="30" width="100">籍贯</td>
+        <td height="30" width="600" colspan="5"><input height="30" width="600" name="stu_nativeplace" type="text" placeholder="请输入籍贯"></td>
+    </tr>
+    <tr>
+        <td height="30" width="100">是否有效</td>
+        <td height="30" width="600" colspan="5"><input height="30" width="600" name="stu_effective" type="text" placeholder="请输入籍贯"></td>
+    </tr>
+    <tr>
+        <td height="30" width="100">籍贯</td>
+        <td height="30" width="600" colspan="5"><input height="30" width="600" name="stu_nativeplace" type="text" placeholder="请输入籍贯"></td>
     </tr>
     <tr>
         <td height="30" width="100">操作</td>

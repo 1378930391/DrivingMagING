@@ -1,10 +1,8 @@
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<%--
-    列举学生的所有信息, 包括考试时间,参照咱们拟写的需求文档
-
---%>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,7 +15,7 @@
         *{
             margin: 0px;
             padding: 0px;
-            background-color: lightseagreen;
+            background-color: #dbdbdb;
             color: black;
         }
         table{
@@ -36,28 +34,28 @@
 <table border="1" cellpadding="0" cellspacing="0" class="table table-bordered">
     <tr>
         <td height="30" width="100">姓名</td>
-        <td height="30" width="600" colspan="5">${teacher.teacher_name}</td>
-    </tr>
-    <tr>
         <td height="30" width="100">性别</td>
-        <td height="30" width="600" colspan="5">${teacher.teacher_gender}</td>
-    </tr>
-    <tr>
         <td height="30" width="100">手机号码</td>
-        <td height="30" width="600" colspan="5">${teacher.teacher_tel}</td>
-    </tr>
-    <tr>
         <td height="30" width="100">部门</td>
-        <td height="30" width="600" colspan="5">${teacher.teacher_department}</td>
-    </tr>
-    <tr>
         <td height="30" width="100">车号</td>
-        <td height="30" width="600" colspan="5">${teacher.teacher_carId}</td>
-    </tr>
-    <tr>
         <td height="30" width="100">科目</td>
-        <td height="30" width="600" colspan="5">${teacher.teacher_level}</td>
+        <td height="30" width="200">操作</td>
     </tr>
+
+    <s:iterator  value="teacherList">
+        <tr>
+            <td height="30" width="100"><s:property value="teacher_name"/></td>
+            <td height="30" width="100"><s:property value="teacher_gender"/></td>
+            <td height="30" width="100"><s:property value="teacher_tel"/></td>
+            <td height="30" width="100"><s:property value="teacher_department"/></td>
+            <td height="30" width="100"><s:property value="teacher_carId"/></td>
+            <td height="30" width="100"><s:property value="teacher_level"/></td>
+            <td height="30" width="200">
+                <a href="teacher_findOne.action?teacher_id=<s:property value="teacher_id"/>">修改</a>
+                <a href="teacher_delete.action?teacher_id=<s:property value="teacher_id"/>">删除</a>
+            </td>
+        </tr>
+    </s:iterator>
 </table>
 </body>
 </html>

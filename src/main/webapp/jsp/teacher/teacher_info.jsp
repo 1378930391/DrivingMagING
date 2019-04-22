@@ -1,10 +1,6 @@
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%--
-    列举学生的所有信息, 包括考试时间,参照咱们拟写的需求文档
-
---%>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,7 +13,7 @@
         *{
             margin: 0px;
             padding: 0px;
-            background-color: lightseagreen;
+            background-color: #dbdbdb;
             color: black;
         }
         table{
@@ -32,51 +28,40 @@
     </style>
 </head>
 <body>
-<h1>驾照考试进度信息</h1>
-<table border="1" cellpadding="0" cellspacing="0" class="table table-bordered">
-    <tr>
-        <td height="30" width="100">姓名</td>
-        <td height="30" width="600" colspan="5">${sessionScope.studnet.stu_name}</td>
-    </tr>
-    <tr>
-        <td height="30" width="100">身份证号</td>
-        <td height="30" width="600" colspan="5">${sessionScope.studnet.stu_identity}</td>
-    </tr>
-    <tr>
-        <td height="30" width="100">手机号码</td>
-        <td height="30" width="600" colspan="5">${sessionScope.studnet.stu_photo}</td>
-    </tr>
-    <tr>
-        <td height="30" width="100">车型</td>
-        <td height="30" width="600" colspan="5">C1</td>
-    </tr>
-    <tr>
-        <td height="90" width="100" rowspan="3" style="vertical-align: middle">考试情况</td>
-        <td height="30" width="80"></td>
-        <td height="30" width="130">科一（驾驶理论）</td>
-        <td height="30" width="130">科二（练桩考试）</td>
-        <td height="30" width="130">科三（道路考试）</td>
-        <td height="30" width="130">科四（安全文明）</td>
-    </tr>
-    <tr>
-        <td>合格情况</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td height="30" width="100"></td>
-        <td height="30" width="600" colspan="5" >您目前处于培训阶段。在您之前还有 &nbsp <a></a>人等待排队练车</td>
-    </tr>
-    <tr>
-        <td height="30" width="100">科二分车情况</td>
-        <td height="30" width="600" colspan="5"></td>
-    </tr>
-    <tr>
-        <td height="30" width="100">科三分车情况</td>
-        <td height="30" width="600" colspan="5"></td>
-    </tr>
-</table>
+<h1>更新教练信息</h1>
+<form action="teacher_update.action">
+    <input type="hidden" value="${teacher.teacher_id}" name="teacher_id">
+    <input type="hidden" value="${teacher.teacher_photo}" name="teacher_photo">
+    <table border="1" cellpadding="0" cellspacing="0" class="table table-bordered">
+        <tr>
+            <td height="30" width="100">姓名</td>
+            <td height="30" width="600" colspan="5"><input name="teacher_name" type="teacher_name" placeholder="请输入教练姓名"  value="${teacher.teacher_name}"></td>
+        </tr>
+        <tr>
+            <td height="30" width="100">性别</td>
+            <td height="30" width="600" colspan="5"><input name="teacher_gender" type="teacher_gender" placeholder="请输入教练性别"  value="${teacher.teacher_gender}"></td>
+        </tr>
+        <tr>
+            <td height="30" width="100">手机号码</td>
+            <td height="30" width="600" colspan="5"><input name="teacher_tel" type="teacher_tel" placeholder="请输入教练电话"  value="${teacher.teacher_tel}"></td>
+        </tr>
+        <tr>
+            <td height="30" width="100">部门</td>
+            <td height="30" width="600" colspan="5"><input name="teacher_department" type="teacher_department" placeholder="请输入部门"  value="${teacher.teacher_department}"></td>
+        </tr>
+        <tr>
+            <td height="30" width="100">车号</td>
+            <td height="30" width="600" colspan="5"><input name="teacher_carId" type="teacher_carId" placeholder="请输入车号"  value="${teacher.teacher_carId}"></td>
+        </tr>
+        <tr>
+            <td height="30" width="100">科目</td>
+            <td height="30" width="600" colspan="5"><input name="teacher_level" type="teacher_level" placeholder="请输入科目"  value="${teacher.teacher_level}"></td>
+        </tr>
+        <tr>
+            <td height="30" width="100">操作</td>
+            <td height="30" width="600" colspan="5"><input height="30" width="600" type="submit" value="提交"></td>
+        </tr>
+    </table>
+</form>
 </body>
 </html>

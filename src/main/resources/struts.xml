@@ -21,7 +21,9 @@
         </action>
         <!-- 教练配置 -->
         <action name="teacher_*" class="action.TeacherAction" method="{1}">
-            <result name="teacher_info">**************</result>
+            <result name="teacher_info">/jsp/teacher/teacher_info.jsp</result>
+            <result name="teacher_all_info">/jsp/teacher/teacher_all_info.jsp</result>
+            <result name="teacher_success" type="redirect">teacher_findAll.action</result>
         </action>
 
         <action name="*" class="action.LoginAction" method="{1}">

@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @Description:
@@ -25,6 +26,7 @@ import java.util.Map;
  * @version: v1.0.0
  */
 @Service
+@Transactional
 public class AdminServiceImpl implements AdminService {
     @Autowired
     private AdminDao adminDao;

@@ -34,11 +34,11 @@ my<link rel="stylesheet" type="text/css" href="styles.css">
 <body>
 <div class="container">
     <div class="row"  id="login-box" style="width:480px;margin:10% auto 0 auto;background: #000;opacity: 0.8;padding:10px 60px;border-radius: 6px;color:#fff;">
-        <form action="student_login.action" id="info">
+        <form action="login.action" id="info">
             <script>
                 function sud() {
                     var IDcard = document.getElementById("stu_identity").value;
-                    var phone = document.getElementById("stu_phone").value;
+                    var phone = document.getElementById("stu_tel").value;
                     if(IDcard == "") {
                         alert("请输入身份证号！");
                     } else if(phone == "") {
@@ -67,7 +67,7 @@ my<link rel="stylesheet" type="text/css" href="styles.css">
             <div class="form-group">
                 <div class="input-group">
                     <div class="input-group-addon">首选电话:</div>
-                    <input type="text" class="form-control" name="stu_phone" id="stu_phone" placeholder="请输入首选电话">
+                    <input type="text" class="form-control" name="stu_tel" id="stu_tel" placeholder="请输入首选电话">
                 </div>
             </div>
             <div class="form-group">
