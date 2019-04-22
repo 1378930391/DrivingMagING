@@ -40,8 +40,8 @@ public class ExamAction extends ActionSupport implements ModelDriven<Exam> {
 
 
         List<Student> students = examService.queryAllStudent(exam);
-        System.out.println(students.size());
-//        ActionContext.getContext().getValueStack().set("students",students);
+//        System.out.println(students.size());
+        ActionContext.getContext().getValueStack().set("students",students);
 
         return "queryAllStudent";
     }
