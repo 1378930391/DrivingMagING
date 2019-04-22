@@ -14,8 +14,11 @@
 	http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <!--开启属性注解==============Resource, Value, Autowired, Qulifier-->
-    <context:annotation-config/>
 
+    <context:annotation-config/>
+    <context:component-scan base-package="service"/>
+    <context:component-scan base-package="action"/>
+    <context:component-scan base-package="dao"/>
     <!--spring整合hibernate-->
     <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
         <!--注入连接池-->
@@ -37,7 +40,7 @@
                 <value>domain/Schedule.hbm.xml</value>
                 <value>domain/Teacher.hbm.xml</value>
                 <value>domain/Student.hbm.xml</value>
-                <value>domain/Admin.hbm.xml</value>
+                <!--<value>domain/Admin.hbm.xml</value>-->
             </list>
         </property>
     </bean>

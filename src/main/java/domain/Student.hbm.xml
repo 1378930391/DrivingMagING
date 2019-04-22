@@ -18,7 +18,7 @@
         <property name="stu_photo"/>
         <property name="stu_effective"/>
         <!--多个学生对应一个班级,单项多对一-->
-        <many-to-one name="stu_class_type" class="domain.Class" column="stu_class_type"/>
+        <!--<many-to-one name="stu_class_type" class="domain.Class" column="stu_class_type" />-->
         <!--多个学生对应一个老师,单向多对一-->
         <many-to-one name="stu_teacher_name" class="domain.Teacher" column="stu_teacher_name" />
         <!--多个学生对应一个状态-->

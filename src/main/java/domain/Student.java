@@ -15,8 +15,8 @@ public class Student {
     private Date stu_createtime;//报名时间
     private String stu_photo;   //学生照片
     private Integer stu_effective;//是否有效 0 1
-
     private Exam stu_exam_id;   //预约考试
+
     /**
      * 通过orm方式表示,多个学生对应一个班级
      * private Integer stu_class_type;//班级类型

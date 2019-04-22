@@ -8,8 +8,19 @@
         <action name="hello_*" class="action.HelloAction" method="{1}">
         </action>
 
-        <action name="admin" class="action.AdminAction" method="toAdmin">
-            <result name="success">/jsp/test.jsp</result>
+        <!--<action name="student_*" class="action.StudentAction" method="{1}">-->
+            <!--<result name="success">/jsp/ttt.jsp </result>-->
+        <!--</action>-->
+
+        <action name="exam_*" class="action.ExamAction" method="{1}">
+            <result name="queryAllExams">/jsp/test.jsp</result>
+            <result name="insertExam" type="redirect">exam_queryAllExams.action</result>
+            <result name="updateExam" type="redirect">exam_queryAllExams.action</result>
+            <!--<result name="findById" type="redirect">/jsp/update.jsp</result>-->
+            <result name="deleteExam" type="redirect">exam_queryAllExams.action</result>
+            <result name="updateExamJump">/jsp/update.jsp</result>
+            <result name="findBySubject" type="redirect">exam_queryAllExams.action</result>
+            <result name="queryAllStudent" >/jsp/queryAllStudent.jsp</result>
         </action>
     </package>
 </struts>

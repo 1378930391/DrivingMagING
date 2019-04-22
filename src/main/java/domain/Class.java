@@ -2,7 +2,7 @@ package domain;
 
 public class Class {
     private Integer class_id;
-    private Integer class_type;
+    private String class_type;
     private Integer class_cost;
 
     public Integer getClass_id() {
@@ -13,11 +13,11 @@ public class Class {
         this.class_id = class_id;
     }
 
-    public Integer getClass_type() {
+    public String getClass_type() {
         return class_type;
     }
 
-    public void setClass_type(Integer class_type) {
+    public void setClass_type(String class_type) {
         this.class_type = class_type;
     }
 
