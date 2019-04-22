@@ -8,6 +8,9 @@ import java.util.List;
 
 
 public interface ExamService {
+    List<Exam> getAllExams();
+    void update(Exam exam);
+    Exam findOne(Integer exam_id);
 
     public List<Exam> queryAllExam();
     public boolean insertExam(Exam exam);

@@ -142,9 +142,9 @@
 <div class="banner_background" id="banner_background1">
     <div class="banner_img">
         <div style="height: 683px;width: 1200px">
-            <div class="neirong1">快捷<a style="color:#ff9900">直营</a>驾校招生</div>
-            <div class="neirong2">百分百帮扶 <a style="color:#ff9900">一对一</a>练车</div>
-            <div class="neirong3">价格公道 品质服务 信誉第一 35天取证</div>
+            <div class="neirong1" style="color: #101010">快捷<a style="color:#ff9900">直营</a>驾校招生</div>
+            <div class="neirong2" style="color: #101010">百分百帮扶 <a style="color:#ff9900">一对一</a>练车</div>
+            <div class="neirong3" style="color: #101010">价格公道 品质服务 信誉第一 35天取证</div>
         </div>
     </div>
 </div>
@@ -153,13 +153,13 @@
         <span id="a_close" onclick="closediv()" style="height: 35px;cursor:pointer!important">关闭</span>
         <a href="javascript:showchat();" class="tiaozhuanJS">
             <div style="width:100%;height:44%;right:10px;">
-                <div class="zixun-online">24小时咨询</div>
+                <div class="zixun-online" style="color: #101010">24小时咨询</div>
             </div>
         </a>
         <div class="phone-online">
-            <p style="font-size:18px;font-weight:bold;">电话咨询</p>
-            <p class="online-tel">4000050282</p>
-            <p style="font-size:12px;">08:00-21:00</p>
+            <p style="font-size:18px;font-weight:bold;" col style="color: #101010">电话咨询</p>
+            <p class="online-tel" style="color: #101010">4000050282</p>
+            <p style="font-size:12px;" style="color: #101010">08:00-21:00</p>
         </div>
     </div>
 </div>

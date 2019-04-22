@@ -26,10 +26,10 @@
     <a href="/exam_queryAllExams.action" target="main" class="btn btn-primary" >
         <h4>个人信息</h4>
     </a>
-    <a href="/jsp/submit.jsp" target="main" class="btn btn-primary" >
+    <a href="teacher_findAll.action" target="main" class="btn btn-primary" >
         <h4>教练信息查看</h4>
     </a>
-    <a href="http://www.baidu.com" target="main" class="btn btn-primary" >
+    <a href="student_study.action" target="main" class="btn btn-primary" >
         <h4>在线学习</h4>
     </a>
     <a href="http://www.baidu.com" target="main" class="btn btn-primary" >

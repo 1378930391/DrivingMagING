@@ -1,20 +1,28 @@
 package dao;
 
-import domain.Teacher;
+import domain.Class;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
 
-@Repository
-public class TeacherDaoImpl extends BaseDaoImpl<Teacher> implements TeacherDao {
+/**
+ * @Description:
+ * @author: Arnold
+ * @since: 2019/4/22 8:24
+ * @version: v1.0.0
+ */
+@Repository("classDao")
+public class ClassDaoImpl extends BaseDaoImpl<Class> implements ClassDao {
+
+
     @Resource
     public void setSessionFactory0(SessionFactory sessionFactory){
         super.setSessionFactory(sessionFactory);
     }
     @Autowired
-    public TeacherDaoImpl() {
-        super(Teacher.class);
+    public ClassDaoImpl() {
+        super(Class.class);
     }
 }

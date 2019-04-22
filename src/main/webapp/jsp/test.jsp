@@ -68,6 +68,24 @@
             </tbody>
         </table>
             <a href="/jsp/submit.jsp">添加</a>
+<form action="student_login.action">  <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-addon">身份证号:</div>
+            <input type="text" class="form-control" name="stu_identity" id="stu_identity" placeholder="请输入身份证号">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-addon">首选电话:</div>
+            <input type="text" class="form-control" name="stu_phone" id="stu_phone" placeholder="请输入首选电话">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="pull-right"></div>
+    </div>
+    <input type="submit" class="btn btn-lg btn-success btn-block" value="登陆">
+</form>
+
 
 </body>
 </html>

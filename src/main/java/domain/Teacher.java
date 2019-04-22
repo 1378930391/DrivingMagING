@@ -10,6 +10,20 @@ public class Teacher {
     private String teacher_level;
     private String teacher_photo;
 
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "teacher_id=" + teacher_id +
+                ", teacher_name='" + teacher_name + '\'' +
+                ", teacher_tel='" + teacher_tel + '\'' +
+                ", teacher_gender='" + teacher_gender + '\'' +
+                ", teacher_carId=" + teacher_carId +
+                ", teacher_department='" + teacher_department + '\'' +
+                ", teacher_level='" + teacher_level + '\'' +
+                ", teacher_photo='" + teacher_photo + '\'' +
+                '}';
+    }
+
     public Integer getTeacher_id() {
         return teacher_id;
     }
