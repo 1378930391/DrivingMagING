@@ -10,10 +10,12 @@ import org.apache.struts2.ServletActionContext;
 import org.hibernate.criterion.DetachedCriteria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.context.request.RequestContextHolder;
 import service.StudentService;
 import utils.TestEmail;
 
 import javax.mail.MessagingException;
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
@@ -45,6 +47,40 @@ public class StudentAction extends ActionSupport implements ModelDriven<Student>
         studentService.update(student);
         return SUCCESS;
     }
+    //学习
+    public String study(){
+        return "study";
+    }
+
+    //26.	查看自己的基本信息
+    public String findStudent() {
+        Student new_Student = studentService.findStudent(student.getStu_id());
+        return new_Student == null ? ERROR : "****";
+    }
+
+    //27.	查询当月考试信息
+    public String findExan() {
+        return "findExan";
+    }
+
+    //查询所有
+    public String findAll() {
+        List<Student> studentList = studentService.findAll();
+        ActionContext.getContext().getValueStack().set("studentList", studentList);
+        return "findAll";
+    }
+
+    /**
+     * 26.查看自己的基本信息
+     * @return
+     */
+    public String findOne() {
+        HttpServletRequest request = (HttpServletRequest) RequestContextHolder.getRequestAttributes();
+        Student student = (Student) ((Map<String, Object>) request.getSession().getAttribute("token")).get("student");
+        ActionContext.getContext().getValueStack().set("student", student);
+        return "findOne";
+    }
+
 
     //学生预约功能
     public String orderExam() throws MessagingException {

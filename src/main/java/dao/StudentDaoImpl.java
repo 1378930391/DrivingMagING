@@ -6,12 +6,15 @@ import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
 
-@Repository
+@Repository("studentDao")
 public class StudentDaoImpl extends BaseDaoImpl<Student> implements StudentDao {
     public StudentDaoImpl() {
         super(Student.class);
     }
+
     @Resource
-    public void setSessionFactory0(SessionFactory sessionFactory){super.setSessionFactory(sessionFactory);}
+    public void setSessionFactiory0(SessionFactory sessionFactory){
+        super.setSessionFactory(sessionFactory);
+    }
 
 }

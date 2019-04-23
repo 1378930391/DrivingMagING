@@ -23,16 +23,19 @@
 
 </style>
 <body bgcolor="#7777CC">
-    <a href="http://www.baidu.com" target="main" class="btn btn-primary" >
+    <a href="/student_findOne.action" target="main" class="btn btn-primary" >
         <h4>个人信息</h4>
     </a>
-    <a href="http://www.baidu.com" target="main" class="btn btn-primary" >
+    <a href="exam_queryAllExams1.action" target="main" class="btn btn-primary" >
+        <h4>考试信息</h4>
+    </a>
+    <a href="teacher_findAll.action" target="main" class="btn btn-primary" >
         <h4>教练信息查看</h4>
     </a>
-    <a href="http://www.baidu.com" target="main" class="btn btn-primary" >
+    <a href="student_study.action" target="main" class="btn btn-primary" >
         <h4>在线学习</h4>
     </a>
-    <a href="http://www.baidu.com" target="main" class="btn btn-primary" >
+    <a href="/jsp/student/driving_info.jsp" target="main" class="btn btn-primary" >
         <h4>关于驾校</h4>
     </a>
     <a href="/exam_findAllExam.action" target="main" class="btn btn-primary">

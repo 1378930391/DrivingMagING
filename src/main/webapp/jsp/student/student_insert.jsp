@@ -16,14 +16,12 @@
             background-color: #dbdbdb;
             color: black;
         }
-
-        table {
-            margin: 0 auto;
-            font-size: 15px;
-            text-align: center;
+        table{
+            margin:0 auto;
+            font-size:15px;
+            text-align:center;
         }
-
-        h1 {
+        h1{
             text-align: center;
             margin: 0px;
         }

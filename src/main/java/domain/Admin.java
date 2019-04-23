@@ -1,6 +1,7 @@
 package domain;
 
 public class Admin {
+
     private Integer admin_id;
     private Integer admin_name;
     private String admin_password;
@@ -12,6 +13,7 @@ public class Admin {
     public void setAdmin_id(Integer admin_id) {
         this.admin_id = admin_id;
     }
+
 
     public Integer getAdmin_name() {
         return admin_name;

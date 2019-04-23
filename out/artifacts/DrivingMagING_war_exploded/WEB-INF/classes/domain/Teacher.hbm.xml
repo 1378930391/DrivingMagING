@@ -1,0 +1,17 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="domain.Teacher" table="teacher">
+        <id name="teacher_id" column="teacher_id">
+            <generator class="native"/>
+        </id>
+        <property name="teacher_name"/>
+        <property name="teacher_tel"/>
+        <property name="teacher_gender"/>
+        <property name="teacher_carId"/>
+        <property name="teacher_department"/>
+        <property name="teacher_level"/>
+        <property name="teacher_photo"/>
+    </class>
+</hibernate-mapping>

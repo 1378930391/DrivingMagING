@@ -1,17 +1,18 @@
 package service;
 
-import com.opensymphony.xwork2.ActionContext;
 import dao.ExamDao;
 import dao.StudentDao;
 import domain.Exam;
 import domain.Student;
-import org.apache.struts2.ServletActionContext;
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.CollectionUtils;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 @Service
@@ -40,13 +41,28 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public List<Student> findAll() {
-        List<Student> list = studentDao.findAll();
-        return list;
+    public void insert(Student student) {
+        studentDao.save(student);
     }
 
     @Override
-    public void insert(Student student) {
+    public Student findById(String stu_id) {
+        return studentDao.findById(stu_id);
+    }
+    @Autowired
+    private StudentDao studentDao;
+    @Autowired
+    private SessionFactory sessionFactory;
+    @Autowired
+    private ClassDao classDao;
+
+    @Override
+    public Student findStudent(String stu_id) {
+        return studentDao.findById(stu_id);
+    }
+
+    @Override
+    public void save(Student student) {
         studentDao.save(student);
     }
 
@@ -56,7 +72,16 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public Student findById(String stu_id) {
-        return studentDao.findById(stu_id);
+    public List<Student> findAll() {
+        return studentDao.findAll();
+    }
+    @Override
+    public Student login(Student student) {
+        Session session=sessionFactory.openSession();
+        Criteria criteria=session.createCriteria(Student.class);
+        criteria.add(Restrictions.eq("stu_identity",student.getStu_identity()));
+        criteria.add(Restrictions.eq("stu_tel",student.getStu_tel()));
+        List<Student> list = criteria.list();
+        return CollectionUtils.isEmpty(list)?null:list.get(0);
     }
 }
