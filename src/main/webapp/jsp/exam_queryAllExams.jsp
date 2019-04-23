@@ -45,7 +45,7 @@
     </s:iterator>
     </tbody>
 </table>
-<a href="/jsp/submit.jsp">添加</a>
+<a href="/jsp/exam_insertExam.jsp">添加</a>
 
 </body>
 </html>
