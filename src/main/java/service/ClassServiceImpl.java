@@ -16,7 +16,7 @@ import java.util.List;
  */
 @Service
 public class ClassServiceImpl implements ClassService {
-    @Resource(name = "classDao")
+    @Autowired
     private ClassDao classDao;
 
 

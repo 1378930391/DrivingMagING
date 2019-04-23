@@ -19,7 +19,7 @@
             margin: 0px;
             padding: 0px;
             background-color: #dbdbdb;
-            color: black;
+            color: #000000;
         }
         table{
             margin:0 auto;

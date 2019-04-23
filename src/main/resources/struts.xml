@@ -25,16 +25,17 @@
             <result name="teacher_success" type="redirect">teacher_findAll.action</result>
         </action>
 
-        <!--<action name="*" class="action.LoginAction" method="{1}">-->
-            <!--<result name="stu_success">/jsp/xxx.jsp</result>      &lt;!&ndash;学员登录成功&ndash;&gt;-->
-            <!--<result name="admin_success">/jsp/xxx.jsp</result>    &lt;!&ndash;管理员登录成功&ndash;&gt;-->
-            <!--<result name="error">/jsp/xxx.jsp</result>            &lt;!&ndash;用户名或密码错误&ndash;&gt;-->
-            <!--<result name="failed">/jsp/xxx.jsp</result>           &lt;!&ndash;用户未经授权访问系统&ndash;&gt;-->
-            <!--<result name="logout_success">/jsp/login.jsp</result> &lt;!&ndash;用户登出成功，跳到登录页&ndash;&gt;-->
-<!--</action>-->
-        <!--<action name="student_*" class="action.StudentAction" method="{1}">-->
-            <!--<result name="success">/jsp/ttt.jsp </result>-->
-        <!--</action>-->
+        <action name="login_*" class="action.LoginAction" method="{1}">
+            <result name="stu_success">/jsp/xxx.jsp</result>      <!--学员登录成功-->
+            <result name="admin_success">/jsp/xxx.jsp</result>    <!--管理员登录成功-->
+            <result name="error">/jsp/xxx.jsp</result>            <!--用户名或密码错误-->
+            <result name="failed">/jsp/xxx.jsp</result>           <!--用户未经授权访问系统-->
+            <result name="logout_success">/jsp/login.jsp</result> <!--用户登出成功，跳到登录页-->
+        </action>
+        <action name="student_*" class="action.StudentAction" method="{1}">
+            <result name="success">/jsp/ttt.jsp </result>
+            <result name="study" type="redirect">/jsp/student/study.jsp</result>
+        </action>
 
         <action name="exam_*" class="action.ExamAction" method="{1}">
             <result name="queryAllExams">/jsp/exam_queryAllExams.jsp</result>

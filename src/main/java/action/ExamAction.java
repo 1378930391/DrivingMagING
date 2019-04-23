@@ -20,7 +20,6 @@ import java.util.Map;
 @Controller
 public class ExamAction extends ActionSupport implements ModelDriven<Exam> {
 
-
     private Exam exam = new Exam();
 
     @Autowired

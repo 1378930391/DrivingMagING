@@ -17,7 +17,7 @@
         *{
             margin: 0px;
             padding: 0px;
-            background-color: #dbdbdb;
+            background-color: #ffffff;
             color: black;
         }
         table{

@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Jarvis
-  Date: 2019/3/28
-  Time: 16:08
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -23,7 +16,7 @@
 
 </style>
 <body bgcolor="#7777CC">
-    <a href="/exam_queryAllExams1.action" target="main" class="btn btn-primary" >
+    <a href="exam_queryAllExams1.action" target="main" class="btn btn-primary" >
         <h4>个人信息</h4>
     </a>
     <a href="teacher_findAll.action" target="main" class="btn btn-primary" >
@@ -32,7 +25,7 @@
     <a href="student_study.action" target="main" class="btn btn-primary" >
         <h4>在线学习</h4>
     </a>
-    <a href="http://www.baidu.com" target="main" class="btn btn-primary" >
+    <a href="/jsp/student/driving_info.jsp" target="main" class="btn btn-primary" >
         <h4>关于驾校</h4>
     </a>
     </body>

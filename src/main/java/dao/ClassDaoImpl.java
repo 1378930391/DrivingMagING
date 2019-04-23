@@ -4,6 +4,7 @@ import domain.Class;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 
@@ -13,7 +14,7 @@ import javax.annotation.Resource;
  * @since: 2019/4/22 8:24
  * @version: v1.0.0
  */
-@Repository("classDao")
+@Repository
 public class ClassDaoImpl extends BaseDaoImpl<Class> implements ClassDao {
 
 
