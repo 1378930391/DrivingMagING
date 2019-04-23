@@ -23,8 +23,11 @@
 
 </style>
 <body bgcolor="#7777CC">
-    <a href="/exam_queryAllExams1.action" target="main" class="btn btn-primary" >
+    <a href="exam_queryAllExams1.action" target="main" class="btn btn-primary" >
         <h4>个人信息</h4>
+    </a>
+    <a href="exam_queryAllExams1.action" target="main" class="btn btn-primary" >
+        <h4>考试信息</h4>
     </a>
     <a href="teacher_findAll.action" target="main" class="btn btn-primary" >
         <h4>教练信息查看</h4>
