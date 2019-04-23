@@ -1,0 +1,29 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="domain.Student" table="student">
+        <id name="stu_id" column="stu_id">
+            <generator class="uuid"/>
+        </id>
+        <property name="stu_name"/>
+        <property name="stu_gender"/>
+        <property name="stu_birthday"/>
+        <property name="stu_age"/>
+        <property name="stu_tel"/>
+        <property name="stu_identity"/>
+        <property name="stu_nativeplace"/>
+        <property name="stu_level"/>
+        <property name="stu_createtime"/>
+        <property name="stu_photo"/>
+        <property name="stu_effective"/>
+        <!--多个学生对应一个班级,单项多对一-->
+        <!--<many-to-one name="stu_class_type" class="domain.Class" column="stu_class_type" />-->
+        <!--多个学生对应一个老师,单向多对一-->
+        <many-to-one name="stu_teacher_name" class="domain.Teacher" column="stu_teacher_name" />
+        <!--多个学生对应一个状态-->
+        <many-to-one name="stu_schedule_info" class="domain.Schedule" column="stu_schedule_info"/>
+
+        <many-to-one name="stu_exam_id" class="domain.Exam" column="stu_exam_id"/>
+    </class>
+</hibernate-mapping>
