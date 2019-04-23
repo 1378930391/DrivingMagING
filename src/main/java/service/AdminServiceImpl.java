@@ -40,7 +40,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public Admin login(Admin admin) {
-        Session session = new org.hibernate.cfg.Configuration().configure().buildSessionFactory().openSession();
+        Session session = sessionFactory.openSession();
         Criteria criteria = session.createCriteria(Admin.class);
         criteria.add(Restrictions.eq("admin_name", admin.getAdmin_name()));
         criteria.add(Restrictions.eq("admin_password", admin.getAdmin_password()));
