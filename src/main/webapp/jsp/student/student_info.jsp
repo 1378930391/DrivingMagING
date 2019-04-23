@@ -17,7 +17,7 @@
         *{
             margin: 0px;
             padding: 0px;
-            background-color: lightseagreen;
+            background-color: #dbdbdb;
             color: black;
         }
         table{
@@ -36,15 +36,15 @@
 <table border="1" cellpadding="0" cellspacing="0" class="table table-bordered">
     <tr>
         <td height="30" width="100">姓名</td>
-        <td height="30" width="600" colspan="5"></td>
+        <td height="30" width="600" colspan="5">${sessionScope.studnet.stu_name}</td>
     </tr>
     <tr>
         <td height="30" width="100">身份证号</td>
-        <td height="30" width="600" colspan="5"></td>
+        <td height="30" width="600" colspan="5">${sessionScope.studnet.stu_identity}</td>
     </tr>
     <tr>
         <td height="30" width="100">手机号码</td>
-        <td height="30" width="600" colspan="5"></td>
+        <td height="30" width="600" colspan="5">${sessionScope.studnet.stu_photo}</td>
     </tr>
     <tr>
         <td height="30" width="100">车型</td>
@@ -57,13 +57,6 @@
         <td height="30" width="130">科二（练桩考试）</td>
         <td height="30" width="130">科三（道路考试）</td>
         <td height="30" width="130">科四（安全文明）</td>
-    </tr>
-    <tr>
-        <td>考试日期</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
     </tr>
     <tr>
         <td>合格情况</td>

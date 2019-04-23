@@ -15,6 +15,9 @@
 
     <!--开启属性注解==============Resource, Value, Autowired, Qulifier-->
     <context:annotation-config/>
+    <context:component-scan base-package="action"/>
+    <context:component-scan base-package="service"/>
+    <context:component-scan base-package="dao"/>
 
     <!--spring整合hibernate-->
     <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
@@ -58,4 +61,5 @@
     </bean>
     <!--开启注解事务-->
     <tx:annotation-driven transaction-manager="transactionManager"/>
+
 </beans>

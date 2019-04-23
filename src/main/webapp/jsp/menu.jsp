@@ -35,5 +35,14 @@
     <a href="http://www.baidu.com" target="main" class="btn btn-primary" >
         <h4>关于驾校</h4>
     </a>
+    <a href="/exam_findAllExam.action" target="main" class="btn btn-primary">
+        <h4>预约考试</h4>
+    </a>
+    <a href="/student_toStudentSave.action" target="main" class="btn btn-primary">
+        <h4>新学员</h4>
+    </a>
+    <a href="/student_studentList.action" target="main" class="btn btn-primary">
+        <h4>学员列表</h4>
+    </a>
     </body>
 </html>

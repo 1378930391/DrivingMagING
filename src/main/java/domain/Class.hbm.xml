@@ -6,7 +6,7 @@
         <id name="class_id" column="class_id">
             <generator class="native"/>
         </id>
-        <property name="class_type"/>
+        <property name="class_type" column="class_type"/>
         <property name="class_cost"/>
     </class>
 </hibernate-mapping>

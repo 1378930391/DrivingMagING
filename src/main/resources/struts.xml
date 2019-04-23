@@ -5,7 +5,26 @@
 <struts>
     <constant name="struts.action.extension" value="action"/>
     <package name="driving" namespace="/" extends="struts-default">
-        <action name="hello_*" class="action.HelloAction" method="{1}">
+        <action name="student_*" class="action.StudentAction" method="{1}">
+            <result name="result">/jsp/student/order_result.jsp</result>
+            <result name="studentSave">/jsp/student/student_insert.jsp</result>
+            <result name="success" type="redirect">/index.jsp</result>
+            <result name="update">/jsp/student/student_modify.jsp</result>
+            <result name="all" >/jsp/student/student_list.jsp</result>
+        </action>
+
+        <action name="teacher_*" class="action.TeacherAction" method="{1}">
+        </action>
+
+        <action name="class_*" class="action.ClassAction" method="{1}">
+
+        </action>
+        <action name="exam_*" class="action.ExamAction" method="{1}">
+            <result name="allExam">/jsp/student/exam_order.jsp</result>
+        </action>
+
+        <action name="schedule_*" class="action.ScheduleAction" method="{1}">
+
         </action>
     </package>
 </struts>
