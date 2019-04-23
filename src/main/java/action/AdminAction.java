@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import service.AdminService;
-
+@Controller
 public class AdminAction extends ActionSupport {
     @Autowired
     private AdminService adminService;

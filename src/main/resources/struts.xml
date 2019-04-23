@@ -19,17 +19,17 @@
             <result name="findExan" type="redirect">exan_***</result>
             <result name="study" type="redirect">/jsp/student/study.jsp</result>
             <result name="success" type="redirect"></result>
+            <result name="student_info" type="redirect">/jsp/student/student_info.jsp</result>
             <result name="student_info" type="redirect">*****************</result>
             <result name="findAll" type="redirect">*****************</result>
             <result name="findOne">/jsp/student/student_info.jsp</result>   <!--查看自己的基本信息-->
-            <result name="student_info" type="redirect">/jsp/student/student_info.jsp</result>
         </action>
         <!-- 管理员配置 -->
-        <action name="admin" class="action.AdminAction" method="toAdmin">
+        <action name="admin_*" class="action.AdminAction" method="{1}">
             <result name="success">/jsp/test.jsp</result>
-            <result name="getIncome">/jsp/getIncome.jsp</result>    <!--查询驾校收入-->
+            <result name="getIncome">/jsp/test.jsp</result>    <!--查询驾校收入-->
             <result name="allStudentByClass">/jsp/allStudentByClass.jsp</result>    <!--查询不同班级所有的学生-->
-            <result name="allStudentByTeacher">/jsp/allStudentByTeacher.jsp</result>    <!--列出每个教练的所有学生-->
+            <result name="allStudentByTeacher">/jsp/admin/show_student_by_teacher.jsp</result>    <!--列出每个教练的所有学生-->
         </action>
         <!-- 教练配置 -->
         <action name="teacher_*" class="action.TeacherAction" method="{1}">
@@ -44,23 +44,17 @@
         </action>
         <!--班级配置-->
         <action name="class_*" class="action.ClassAction" method="{1}">
-            <result name="findAllClass"></result>  <!--学生查询开班的信息-->
-            <result name="findClassById"></result>  <!--根据id查询班级-->
+            <result name="findAllClass">/jsp/admin/query_class.jsp</result>  <!--学生查询开班的信息-->
+            <result name="findClassById">/jsp/admin/edit_class.jsp</result>  <!--根据id查询班级-->
             <result name="updateClass"></result>  <!--修改班级信息-->
         </action>
         <!-- 登录配置 -->
-
         <action name="login_*" class="action.LoginAction" method="{1}">
-            <result name="stu_success">/jsp/xxx.jsp</result>      <!--学员登录成功-->
-            <result name="admin_success">/jsp/xxx.jsp</result>    <!--管理员登录成功-->
-            <result name="error">/jsp/xxx.jsp</result>            <!--用户名或密码错误-->
+            <result name="stu_success">/index.jsp</result>      <!--学员登录成功-->
+            <result name="admin_success">/index.jsp</result>    <!--管理员登录成功-->
+            <result name="error">/jsp/login.jsp</result>            <!--用户名或密码错误-->
             <result name="failed">/jsp/xxx.jsp</result>           <!--用户未经授权访问系统-->
             <result name="logout_success" type="redirect">/jsp/top.jsp</result> <!--用户登出成功，跳到登录页-->
-            <result name="logout_success">/jsp/login.jsp</result> <!--用户登出成功，跳到登录页-->
-        </action>
-        <action name="student_*" class="action.StudentAction" method="{1}">
-            <result name="success">/jsp/ttt.jsp </result>
-            <result name="study" type="redirect">/jsp/student/study.jsp</result>
         </action>
 
         <action name="exam_*" class="action.ExamAction" method="{1}">

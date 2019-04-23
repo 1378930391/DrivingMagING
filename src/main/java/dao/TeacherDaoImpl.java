@@ -12,7 +12,7 @@ public class TeacherDaoImpl extends BaseDaoImpl<Teacher> implements TeacherDao {
         super(Teacher.class);
     }
     @Resource
-    public void setSessionFactiory0(SessionFactory sessionFactory){
+    public void setSessionFactory0(SessionFactory sessionFactory){
         super.setSessionFactory(sessionFactory);
     }
 }

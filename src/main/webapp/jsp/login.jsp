@@ -34,11 +34,12 @@ my<link rel="stylesheet" type="text/css" href="styles.css">
 <body>
 <div class="container">
     <div class="row"  id="login-box" style="width:480px;margin:10% auto 0 auto;background: #000;opacity: 0.8;padding:10px 60px;border-radius: 6px;color:#fff;">
-        <form action="login.action" id="info" method="post">
+        <form action="login_login.action" id="info" method="post">
             <script>
                 function sud() {
+                    alert("登录。。。。。。。。。。。。。。。")
                     var IDcard = document.getElementById("stu_identity").value;
-                    var phone = document.getElementById("stu_phone").value;
+                    var phone = document.getElementById("stu_tel").value;
                     if(IDcard == "") {
                         alert("请输入身份证号！");
                     } else if(phone == "") {
@@ -54,8 +55,8 @@ my<link rel="stylesheet" type="text/css" href="styles.css">
                 <div class="input-group">
                     <div class="input-group-addon">登陆权限:</div>
                     <%--<input type="text" class="form-control" name="username" id="username" placeholder="如，ZhangSan">--%>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="acq" value="1" checked="checked" />管理员</td>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="acq" value="0" />学&nbsp;&nbsp;员</td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="isStudent" value="0" checked="checked" />管理员</td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="isStudent" value="1" />学&nbsp;&nbsp;员</td>
                 </div>
             </div>
             <div class="form-group">
@@ -67,7 +68,7 @@ my<link rel="stylesheet" type="text/css" href="styles.css">
             <div class="form-group">
                 <div class="input-group">
                     <div class="input-group-addon">首选电话:</div>
-                    <input type="text" class="form-control" name="stu_phone" id="stu_phone" placeholder="请输入首选电话">
+                    <input type="text" class="form-control" name="stu_tel" id="stu_tel" placeholder="请输入首选电话">
                 </div>
             </div>
             <div class="form-group">

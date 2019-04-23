@@ -19,7 +19,10 @@ import javax.annotation.Resource;
  */
 @Repository("classDao")
 public class ClassDaoImpl extends BaseDaoImpl<Class> implements ClassDao {
-
+    @Resource
+    public void setSessionFactory0(SessionFactory sessionFactory){
+        super.setSessionFactory(sessionFactory);
+    }
     public ClassDaoImpl() {
         super(Class.class);
     }

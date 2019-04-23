@@ -4,6 +4,7 @@ import dao.ClassDao;
 import domain.Class;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.List;
  * @version: v1.0.0
  */
 @Service
+@Transactional
 public class ClassServiceImpl implements ClassService {
     @Autowired
     private ClassDao classDao;

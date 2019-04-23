@@ -10,13 +10,12 @@ import javax.annotation.Resource;
 import java.util.List;
 
 
-@Repository
+@Repository("examDao")
 public class ExamDaoImpl extends BaseDaoImpl<Exam> implements ExamDao {
 
-    @Resource
-    public void setSessionFactory0(SessionFactory sessionFactory){
-        super.setSessionFactory(sessionFactory);
-    }
+
+
+
     @Autowired
     public ExamDaoImpl() {
         super(Exam.class);
@@ -32,4 +31,10 @@ public class ExamDaoImpl extends BaseDaoImpl<Exam> implements ExamDao {
 
         return (List<Student>)this.getHibernateTemplate().find("from Student where stu_exam_id = ?",exam);
     }
+
+    @Resource
+    public void setSessionFactory0(SessionFactory sessionFactory){
+        super.setSessionFactory(sessionFactory);
+    }
+
 }

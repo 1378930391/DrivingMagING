@@ -49,6 +49,7 @@ public class LoginAction extends ActionSupport implements ModelDriven<LoginInfoV
             if (studentService.login(student)!=null) {
                 map.put("student", studentService.login(student));
                 context.getSession().put("token", map);
+                context.getSession().put("isStudent","1");
                 ActionContext.getContext().getValueStack().set("name",student.getStu_name());
                 return "stu_success";
             } else
@@ -61,6 +62,7 @@ public class LoginAction extends ActionSupport implements ModelDriven<LoginInfoV
             if (adminService.login(admin)!=null) {
                 map.put("admin", adminService.login(admin));
                 context.getSession().put("token", map);
+                context.getSession().put("isStudent","0");
                 ActionContext.getContext().getValueStack().set("name",admin.getAdmin_name());
                 return "admin_success";
             } else
