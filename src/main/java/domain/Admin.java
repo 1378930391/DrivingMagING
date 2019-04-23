@@ -14,6 +14,7 @@ public class Admin {
         this.admin_id = admin_id;
     }
 
+
     public Integer getAdmin_name() {
         return admin_name;
     }
