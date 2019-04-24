@@ -32,7 +32,6 @@
                         <a href="#"><span class="glyphicon glyphicon-user">当前用户：<s:property value="name"></s:property></span></a>
                     </li>
                     <li>
-                        <s:debug>debug</s:debug>
                         <a href="logout.action" ><span class="glyphicon glyphicon-log-in"></span> 注销</a>
                     </li>
                 </ul>

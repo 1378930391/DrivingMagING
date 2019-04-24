@@ -1,5 +1,6 @@
 package service;
 
+import dao.ClassDao;
 import dao.ExamDao;
 import dao.StudentDao;
 import domain.Exam;
@@ -23,6 +24,8 @@ public class StudentServiceImpl implements StudentService {
     private StudentDao studentDao;
     @Autowired
     private ExamDao examDao;
+    @Autowired
+    private SessionFactory sessionFactory;
 
     @Override
     public Boolean orderExam(Student student, int exam_id) {
@@ -49,21 +52,10 @@ public class StudentServiceImpl implements StudentService {
     public Student findById(String stu_id) {
         return studentDao.findById(stu_id);
     }
-    @Autowired
-    private StudentDao studentDao;
-    @Autowired
-    private SessionFactory sessionFactory;
-    @Autowired
-    private ClassDao classDao;
 
     @Override
     public Student findStudent(String stu_id) {
         return studentDao.findById(stu_id);
-    }
-
-    @Override
-    public void save(Student student) {
-        studentDao.save(student);
     }
 
     @Override

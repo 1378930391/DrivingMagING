@@ -12,10 +12,10 @@ import java.util.List;
 @Transactional
 public class ClassServiceImpl implements ClassService {
     @Autowired
-    private ClassDao clazzDao;
+    private ClassDao classDao;
     @Override
     public List<Class> findAll() {
-        List<Class> list = clazzDao.findAll();
+        List<Class> list = classDao.findAll();
         return list;
     }
     @Override

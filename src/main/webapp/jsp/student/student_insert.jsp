@@ -30,7 +30,7 @@
     <script type="text/javascript">
         $(function () {
             //异步加载客户信息
-            $.post("class_findAllClass.action", {}, function (data) {
+            $.post("class_findClassAll.action", {}, function (data) {
                 $(data).each(function (i, n) {
                     $("#stu_class_type").append("<option value='" + n.class_id + "'>" + n.class_type + "</option>");
                 })

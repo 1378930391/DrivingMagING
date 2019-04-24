@@ -37,19 +37,20 @@
 <table border="1" cellpadding="0" cellspacing="0" class="table table-bordered">
     <tr>
         <td height="30" width="100">姓名</td>
-        <td height="30" width="600" colspan="5">${studnet.stu_name}</td>
+        <td height="30" width="600" colspan="5">${student.stu_name}</td>
+        <%--<td height="30" width="600" colspan="5"><s:property value="student"/></td>--%>
     </tr>
     <tr>
         <td height="30" width="100">身份证号</td>
-        <td height="30" width="600" colspan="5">${studnet.stu_identity}</td>
+        <td height="30" width="600" colspan="5">${student.stu_identity}</td>
     </tr>
     <tr>
         <td height="30" width="100">手机号码</td>
-        <td height="30" width="600" colspan="5">${studnet.stu_photo}</td>
+        <td height="30" width="600" colspan="5">${student.stu_tel}</td>
     </tr>
     <tr>
         <td height="30" width="100">车型</td>
-        <td height="30" width="600" colspan="5">${teacher.teacher_level}</td>
+        <td height="30" width="600" colspan="5">${student.stu_level}</td>
     </tr>
     <tr>
         <td height="90" width="100" rowspan="3" style="vertical-align: middle">考试情况</td>

@@ -75,8 +75,13 @@ public class StudentAction extends ActionSupport implements ModelDriven<Student>
      * @return
      */
     public String findOne() {
-        HttpServletRequest request = (HttpServletRequest) RequestContextHolder.getRequestAttributes();
-        Student student = (Student) ((Map<String, Object>) request.getSession().getAttribute("token")).get("student");
+//        HttpServletRequest request = (HttpServletRequest) RequestContextHolder.getRequestAttributes();
+//
+//
+//        Object token = request.getSession().getAttribute("token");
+//        System.out.println(token);
+//        Student student = (Student) ((Map<String, Object>) request.getSession().getAttribute("token")).get("student");
+        Student student =studentService.findById("297e7e946a482188016a482580ac0003");
         ActionContext.getContext().getValueStack().set("student", student);
         return "findOne";
     }

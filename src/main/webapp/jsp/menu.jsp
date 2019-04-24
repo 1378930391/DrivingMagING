@@ -23,7 +23,7 @@
 
 </style>
 <body bgcolor="#7777CC">
-    <a href="/student_findOne.action" target="main" class="btn btn-primary" >
+    <a href="student_findOne.action" target="main" class="btn btn-primary" >
         <h4>个人信息</h4>
     </a>
     <a href="exam_queryAllExams1.action" target="main" class="btn btn-primary" >
@@ -46,6 +46,12 @@
     </a>
     <a href="/student_studentList.action" target="main" class="btn btn-primary">
         <h4>学员列表</h4>
+    </a>
+    <a href="class_findAllClass.action" target="main" class="btn btn-primary" >
+        <h4>已开设班级信息</h4>
+    </a>
+    <a href="admin_getAllStudentByTeacher.action" target="main" class="btn btn-primary" >
+        <h4>教练-学员信息查询</h4>
     </a>
     </body>
 </html>
